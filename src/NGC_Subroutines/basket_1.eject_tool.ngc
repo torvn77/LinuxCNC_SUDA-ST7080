@@ -1,0 +1,6 @@
+O<basket_1.eject_tool> sub
+(DEBUG, Called basket_1_eject_tool function)
+(DEBUG, _pocket=#<_pocket>)
+(DEBUG, _basket=#<_basket>)
+O<basket_1.eject_tool> endsub
+M02
