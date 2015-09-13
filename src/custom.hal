@@ -1,1 +1,4 @@
-
+# Include your custom HAL commands here
+# This file will not be overwritten when you run PNCconf again
+#source Interface/Gamepad-devl/Gamepad.hal
+source MDI_Commands/mdi_commands.hal
