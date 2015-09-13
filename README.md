@@ -2,10 +2,11 @@
 Extract sources achives directory ~/linuxcnc/configs<br>
 Copy *.desktop file home directory and modifi path to home folder name.<br>
 
-Установка с помощью git<br>
+Установка с помощью git:<br>
 git clone git://github.com/torvn77/LinuxCNC_M4-Dcs_5i25-7i77.git ~/linuxcnc/configs/LinuxCNC_M4-Dcs_5i25-7i77<br>
-Обновление с помощью git<br>
-git pull git://github.com/torvn77/LinuxCNC_M4-Dcs_5i25-7i77.git ~/linuxcnc/configs/LinuxCNC_M4-Dcs_5i25-7i77<br>
+Обновление с помощью git:<br>
+cd ~/linuxcnc/configs/LinuxCNC_M4-Dcs_5i25-7i77<br>
+git pull git://github.com/torvn77/LinuxCNC_M4-Dcs_5i25-7i77.git <br>
 
 Краткая справка по командам git
 http://www.opennet.ru/tips/info/2179.shtml
