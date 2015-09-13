@@ -1,0 +1,136 @@
+
+
+#*******************
+#  AXIS X
+#*******************
+
+# Step Gen signals/setup
+
+setp   hm2_5i25.0.stepgen.00.dirsetup        [AXIS_0]DIRSETUP
+setp   hm2_5i25.0.stepgen.00.dirhold         [AXIS_0]DIRHOLD
+setp   hm2_5i25.0.stepgen.00.steplen         [AXIS_0]STEPLEN
+setp   hm2_5i25.0.stepgen.00.stepspace       [AXIS_0]STEPSPACE
+setp   hm2_5i25.0.stepgen.00.position-scale  [AXIS_0]STEP_SCALE
+setp   hm2_5i25.0.stepgen.00.step_type        0
+setp   hm2_5i25.0.stepgen.00.control-type     0
+setp   hm2_5i25.0.stepgen.00.maxaccel         [AXIS_0]STEPGEN_MAXACCEL
+setp   hm2_5i25.0.stepgen.00.maxvel           [AXIS_0]STEPGEN_MAXVEL
+
+net x-pos-fb  <=  hm2_5i25.0.stepgen.00.position-fb
+net x-pos-cmd =>  hm2_5i25.0.stepgen.00.position-cmd
+net x-enable  =>  hm2_5i25.0.stepgen.00.enable
+
+
+#*******************
+#  AXIS Y
+#*******************
+
+# Step Gen signals/setup
+
+setp   hm2_5i25.0.stepgen.01.dirsetup        [AXIS_1]DIRSETUP
+setp   hm2_5i25.0.stepgen.01.dirhold         [AXIS_1]DIRHOLD
+setp   hm2_5i25.0.stepgen.01.steplen         [AXIS_1]STEPLEN
+setp   hm2_5i25.0.stepgen.01.stepspace       [AXIS_1]STEPSPACE
+setp   hm2_5i25.0.stepgen.01.position-scale  [AXIS_1]STEP_SCALE
+setp   hm2_5i25.0.stepgen.01.step_type        0
+setp   hm2_5i25.0.stepgen.01.control-type     0
+setp   hm2_5i25.0.stepgen.01.maxaccel         [AXIS_1]STEPGEN_MAXACCEL
+setp   hm2_5i25.0.stepgen.01.maxvel           [AXIS_1]STEPGEN_MAXVEL
+
+net y-pos-fb  <=  hm2_5i25.0.stepgen.01.position-fb
+net y-pos-cmd =>  hm2_5i25.0.stepgen.01.position-cmd
+net y-enable  =>  hm2_5i25.0.stepgen.01.enable
+
+
+#*******************
+#  AXIS Z
+#*******************
+
+# Step Gen signals/setup
+
+setp   hm2_5i25.0.stepgen.02.dirsetup        [AXIS_2]DIRSETUP
+setp   hm2_5i25.0.stepgen.02.dirhold         [AXIS_2]DIRHOLD
+setp   hm2_5i25.0.stepgen.02.steplen         [AXIS_2]STEPLEN
+setp   hm2_5i25.0.stepgen.02.stepspace       [AXIS_2]STEPSPACE
+setp   hm2_5i25.0.stepgen.02.position-scale  [AXIS_2]STEP_SCALE
+setp   hm2_5i25.0.stepgen.02.step_type        0
+setp   hm2_5i25.0.stepgen.02.control-type     0
+setp   hm2_5i25.0.stepgen.02.maxaccel         [AXIS_2]STEPGEN_MAXACCEL
+setp   hm2_5i25.0.stepgen.02.maxvel           [AXIS_2]STEPGEN_MAXVEL
+
+net z-pos-fb  <=  hm2_5i25.0.stepgen.02.position-fb
+net z-pos-cmd =>  hm2_5i25.0.stepgen.02.position-cmd
+net z-enable  =>  hm2_5i25.0.stepgen.02.enable
+
+#*******************
+#  AXIS A
+#*******************
+
+# Step Gen signals/setup
+
+setp   hm2_5i25.0.stepgen.03.dirsetup        [AXIS_3]DIRSETUP
+setp   hm2_5i25.0.stepgen.03.dirhold         [AXIS_3]DIRHOLD
+setp   hm2_5i25.0.stepgen.03.steplen         [AXIS_3]STEPLEN
+setp   hm2_5i25.0.stepgen.03.stepspace       [AXIS_3]STEPSPACE
+setp   hm2_5i25.0.stepgen.03.position-scale  [AXIS_3]STEP_SCALE
+setp   hm2_5i25.0.stepgen.03.step_type        0
+setp   hm2_5i25.0.stepgen.03.control-type     0
+setp   hm2_5i25.0.stepgen.03.maxaccel         [AXIS_3]STEPGEN_MAXACCEL
+setp   hm2_5i25.0.stepgen.03.maxvel           [AXIS_3]STEPGEN_MAXVEL
+
+net a-pos-fb  <=  hm2_5i25.0.stepgen.03.position-fb
+net a-pos-cmd =>  hm2_5i25.0.stepgen.03.position-cmd
+net a-enable  =>  hm2_5i25.0.stepgen.03.enable
+
+#*******************
+#  AXIS B
+#*******************
+
+# Step Gen signals/setup
+
+setp   hm2_5i25.0.stepgen.04.dirsetup        [AXIS_4]DIRSETUP
+setp   hm2_5i25.0.stepgen.04.dirhold         [AXIS_4]DIRHOLD
+setp   hm2_5i25.0.stepgen.04.steplen         [AXIS_4]STEPLEN
+setp   hm2_5i25.0.stepgen.04.stepspace       [AXIS_4]STEPSPACE
+setp   hm2_5i25.0.stepgen.04.position-scale  [AXIS_4]STEP_SCALE
+setp   hm2_5i25.0.stepgen.04.step_type        0
+setp   hm2_5i25.0.stepgen.04.control-type     0
+setp   hm2_5i25.0.stepgen.04.maxaccel         [AXIS_4]STEPGEN_MAXACCEL
+setp   hm2_5i25.0.stepgen.04.maxvel           [AXIS_4]STEPGEN_MAXVEL
+
+net b-pos-fb  <=  hm2_5i25.0.stepgen.04.position-fb
+net b-pos-cmd =>  hm2_5i25.0.stepgen.04.position-cmd
+net b-enable  =>  hm2_5i25.0.stepgen.04.enable
+
+#*******************
+#  SPINDLE S
+#*******************
+
+# ---digital potentionmeter output signals/setup---
+
+setp   hm2_5i25.0.7i76.0.0.spinout-minlim    [SPINDLE_9]OUTPUT_MIN_LIMIT
+setp   hm2_5i25.0.7i76.0.0.spinout-maxlim    [SPINDLE_9]OUTPUT_MAX_LIMIT
+setp   hm2_5i25.0.7i76.0.0.spinout-scalemax  [SPINDLE_9]OUTPUT_SCALE
+
+net spindle-cmd  => hm2_5i25.0.7i76.0.0.spinout
+net spindle-on   => hm2_5i25.0.7i76.0.0.spinena
+#net spindle-ccw => hm2_5i25.0.7i76.0.0.spindir
+
+#******************************
+# connect miscellaneous signals
+#******************************
+
+#  ---estop signals---
+
+#net estop-out => hm2_5i25.0.7i76.0.0.input-??
+#net estop-in  <= hm2_5i25.0.7i76.0.0.input-??
+
+#  ---Tool measurent sensors signals---
+
+#net probe-in <= hm2_5i25.0.7i76.0.0.input-??
+
+#  ---home signals---
+#
+net min-home-x <= hm2_5i25.0.7i76.0.0.input-08-not
+net min-home-y <= hm2_5i25.0.7i76.0.0.input-09-not
+net max-home-z <= hm2_5i25.0.7i76.0.0.input-10-not
