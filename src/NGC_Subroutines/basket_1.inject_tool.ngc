@@ -2,4 +2,11 @@ O<basket_1.inject_tool> sub
 (DEBUG, Called basket_1_inject_tool function)
 (DEBUG, _pocket=#<_pocket>)
 (DEBUG, _basket=#<_basket>)
+//включить продувку M63 P1
+//пауза
+//расжать цангу
+//опуститься 
+//зажать цангу
+//подняться 
+// правильно выйти из ячейки в рабочее пространство
 O<basket_1.inject_tool> endsub
