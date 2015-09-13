@@ -1,0 +1,42 @@
+O<sys.matheight> sub
+(DEBUG, matheight called #1 #2)
+
+G49 G40 G92.2
+O0110 if [ #<_coord_system> NE 590 ]
+G10 L2 P6 X0 Y0 Z0 R0
+g59
+O0110 elseif [ #<_coord_system> EQ 590 ]
+(DEBUG,goto_poc error!— Preselected G59 !)
+G54
+M02
+O0110 else
+G54
+M02
+O0110 endif
+
+O0120 if [ #<_current_tool> LE 0 ]
+(DEBUG, Incorect tool )
+(DEBUG,_current_tool = #<_current_tool> )
+G54
+M02
+O0120 else
+(Good, do nothing )
+(DEBUG,_current_tool = #<_current_tool> )
+O0120 endif
+
+F[#<_ini[MATERIAL_HEIGHT_PROBE]COARSE_FEED_SEARCH>]
+G38.3 Z[#<_ini[AXIS_2]MIN_LIMIT>]
+G38.5 Z[#<_ini[AXIS_2]MAX_LIMIT>]
+F[#<_ini[MATERIAL_HEIGHT_PROBE]ACCURATE_FEED_SEARCH>]
+G38.3 Z[#<_ini[AXIS_2]MIN_LIMIT>]
+#<probe_bottom> = #5063
+F[#<_ini[MATERIAL_HEIGHT_PROBE]ACCURATE_FEED_LATCH>]
+G38.5 Z[#<_ini[AXIS_2]MAX_LIMIT>]
+#<probe_top> = #5063
+#<probe_result> = [#<probe_bottom>+[[#<probe_top>-#<probe_bottom>]/2]]
+G10 L2 P1 Z[#<probe_result>]
+
+G0 Z[#<_ini[AXIS_2]MAX_LIMIT>]
+g54
+O<sys.matheight> endsub
+M02
