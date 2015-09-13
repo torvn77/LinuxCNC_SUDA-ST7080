@@ -79,4 +79,3 @@ source Devices/ToolChange/manual_toolchange.hal
 source Devices/Mesa/mesa.hal
 source Devices/Mesa/5i25-6i25.hal
 source Devices/Mesa/7i76.hal
-source Devices/Mesa/7i77.hal
