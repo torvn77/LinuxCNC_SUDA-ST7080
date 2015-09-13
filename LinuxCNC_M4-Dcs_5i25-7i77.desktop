@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=LinuxCNC-13.09.2015 (github)
+Exec=/usr/bin/linuxcnc  '/home/mops/linuxcnc/configs/LinuxCNC_M4-Dcs_5i25-7i77/src/LinuxCNC_M4-Dcs_5i25-7i77.ini'
+Type=Application
+Comment=
+Icon=linuxcncicon
+Terminal= true
