@@ -8,3 +8,4 @@ git clone git://github.com/torvn77/LinuxCNC_M4-Dcs_5i25-7i77.git ~/linuxcnc/conf
 git pull git://github.com/torvn77/LinuxCNC_M4-Dcs_5i25-7i77.git ~/linuxcnc/configs/LinuxCNC_M4-Dcs_5i25-7i77<br>
 
 Краткая справка по командам git
+http://www.opennet.ru/tips/info/2179.shtml
