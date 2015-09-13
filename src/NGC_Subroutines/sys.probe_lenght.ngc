@@ -1,0 +1,60 @@
+O<sys.probe_lenght> sub
+G49 G40 G92.2
+O0110 if [ #<_coord_system> NE 590 ]
+G10 L2 P6 X0 Y0 Z0 R0
+g59
+O0110 elseif [ #<_coord_system> EQ 590 ]
+(DEBUG,goto_poc error!— Preselected G59 !)
+G54
+M02
+O0110 else
+G54
+M02
+O0110 endif
+
+O0120 if [ #<_current_tool> LE 0 ]
+(DEBUG, Incorect tool )
+(DEBUG,_current_tool = #<_current_tool> )
+G54
+M02
+O0120 else
+(DEBUG, Good, do nothing )
+(DEBUG,_current_tool = #<_current_tool> )
+O0120 endif
+
+G0 Z[#<_ini[AXIS_2]MAX_LIMIT>]
+G0 X[#<_ini[COARSE_LENGTH_PROBE_SENSOR]COORD_X>] Y[#<_ini[COARSE_LENGTH_PROBE_SENSOR]COORD_Y>]
+
+F[#<_ini[COARSE_LENGTH_PROBE_SENSOR]FEED_SEARCH>]
+F2048
+G38.3 Z[#<_ini[AXIS_2]MIN_LIMIT>]
+F[#<_ini[COARSE_LENGTH_PROBE_SENSOR]FEED_LATCH>]
+F2048
+G38.5 Z[#<_ini[AXIS_2]MAX_LIMIT>]
+#<probe_top> = #5063
+
+G0 Z[[#<probe_top> + 30] + [#<_ini[COARSE_LENGTH_PROBE_SENSOR]COORD_Z>] - #<_ini[ACCURATE_LENGTH_PROBE_SENSOR]COORD_Z>]
+G0 X[#<_ini[ACCURATE_LENGTH_PROBE_SENSOR]COORD_X>] Y[#<_ini[ACCURATE_LENGTH_PROBE_SENSOR]COORD_Y>]
+G0 Z[[#<probe_top> + 1.0] + [#<_ini[COARSE_LENGTH_PROBE_SENSOR]COORD_Z>] - #<_ini[ACCURATE_LENGTH_PROBE_SENSOR]COORD_Z>]
+
+F[#<_ini[ACCURATE_LENGTH_PROBE_SENSOR]FEED_SEARCH>]
+F2048
+G38.3 Z[#<_ini[AXIS_2]MIN_LIMIT>]
+G38.5 Z[#<_ini[AXIS_2]MAX_LIMIT>]
+
+F[#<_ini[ACCURATE_LENGTH_PROBE_SENSOR]FEED_LATCH>]
+F2048
+G38.3 Z[#<_ini[AXIS_2]MIN_LIMIT>]
+#<probe_bottom> = #5063
+G38.5 Z[#<_ini[AXIS_2]MAX_LIMIT>]
+#<probe_top> = #5063
+#<probe_result> = [#<probe_bottom>+[[#<probe_top>-#<probe_bottom>]/2]]
+#<comp_z> = [#<probe_result> - #<_ini[ACCURATE_LENGTH_PROBE_SENSOR]COORD_Z>]
+(DEBUG,#<probe_result> #<comp_z>)
+G10 L1 P#<_current_tool> Z#<comp_z>
+G43
+G0 Z[#<_ini[AXIS_2]MAX_LIMIT> - #5403]
+G54
+O<sys.probe_lenght> endsub
+G54
+M02
