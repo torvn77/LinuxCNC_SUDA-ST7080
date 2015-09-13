@@ -1,1 +1,82 @@
 
+loadrt trivkins
+loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[TRAJ]AXES num_dio=4
+
+addf motion-command-handler servo-thread
+addf motion-controller servo-thread
+
+#*******************
+#  AXIS X
+#*******************
+
+net x-enable  <= axis.0.amp-enable-out
+net x-pos-cmd <= axis.0.motor-pos-cmd
+net x-pos-fb  => axis.0.motor-pos-fb
+
+#*******************
+#  AXIS Y
+#*******************
+
+net y-enable  <= axis.1.amp-enable-out
+net y-pos-cmd <= axis.1.motor-pos-cmd 
+net y-pos-fb  => axis.1.motor-pos-fb  
+
+#*******************
+#  AXIS Z
+#*******************
+
+net z-enable  <= axis.2.amp-enable-out
+net z-pos-cmd <= axis.2.motor-pos-cmd
+net z-pos-fb  => axis.2.motor-pos-fb
+
+#*******************
+#  AXIS A
+#*******************
+
+net a-enable  <= axis.3.amp-enable-out
+net a-pos-cmd <= axis.3.motor-pos-cmd
+net a-pos-fb  => axis.3.motor-pos-fb
+
+
+#*******************
+#  AXIS B
+#*******************
+
+net b-enable  <= axis.4.amp-enable-out
+net b-pos-cmd <= axis.4.motor-pos-cmd
+net b-pos-fb  => axis.4.motor-pos-fb
+
+
+#*******************
+#  SPINDLE S
+#*******************
+
+net spindle-on   <= motion.spindle-on
+net spindle-ccw <= motion.spindle-reverse
+net spindle-cmd  <= motion.spindle-speed-out-abs
+
+#******************************
+# connect miscellaneous signals
+#******************************
+
+#  ---Tool measurent sensors signals---
+
+net probe-in => motion.probe-input
+
+#  ---home signals---
+
+net min-home-x => axis.0.home-sw-in
+net min-home-x => axis.0.neg-lim-sw-in
+net min-home-y => axis.1.home-sw-in
+net min-home-y => axis.1.neg-lim-sw-in
+net max-home-z => axis.2.home-sw-in
+net max-home-z => axis.2.pos-lim-sw-in
+
+#net estop-out     <=  iocontrol.0.user-enable-out
+#net estop-out     =>  iocontrol.0.emc-enable-in
+net estop-loop iocontrol.0.user-enable-out =>  iocontrol.0.emc-enable-in
+
+source Devices/ToolChange/manual_toolchange.hal
+source Devices/Mesa/mesa.hal
+source Devices/Mesa/5i25-6i25.hal
+source Devices/Mesa/7i77.hal
