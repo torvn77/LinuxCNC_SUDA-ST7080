@@ -1,7 +1,7 @@
 loadrt trivkins
 source linuxcnc.hal
-unlink iocontrol.0.user-enable-out
-unlink iocontrol.0.emc-enable-in
+unlinkp iocontrol.0.user-enable-out
+unlinkp iocontrol.0.emc-enable-in
 net estop-loop iocontrol.0.user-enable-out =>  iocontrol.0.emc-enable-in
 
 source Devices/ToolChange/manual_toolchange.hal
