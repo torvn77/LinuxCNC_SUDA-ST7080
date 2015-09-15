@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+#true;false
+Terminal=true
+Name=LinuxCNC_Dcs_M4_5i25-7i77 (github_zip-master)
+Exec="/usr/bin/linuxcnc -d '/storage/Projects/.ini'"
+Type=Application
+Comment=
+Icon=/usr/share/linuxcnc/linuxcncicon.png
+
