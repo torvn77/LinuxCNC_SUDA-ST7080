@@ -1,0 +1,15 @@
+
+loadrt hm2_pci config=" num_encoders=3 num_pwmgens=0 num_3pwmgens=0 num_stepgens=0 sserial_port_0=000xx " 
+setp hm2_5i25.0.watchdog.timeout_ns 10000000
+#net hm2_5i25.0.7i77.0.1.analogena x-enable 
+
+
+source axis-x.hal
+source axis-y.hal
+source axis-z.hal
+source spindle.hal
+source gpio.hal
+
+addf hm2_5i25.0.read servo-thread
+addf hm2_5i25.0.write servo-thread
+addf hm2_5i25.0.pet_watchdog servo-thread
