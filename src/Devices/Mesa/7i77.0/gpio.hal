@@ -1,0 +1,19 @@
+
+# --- Output ---
+
+net hm2_5i25.0.7i77.0.0.output-00 <= estop-loop
+net hm2_5i25.0.7i77.0.0.output-01 <= spindle-on
+net hm2_5i25.0.7i77.0.0.output-02 <= spindle-on
+net hm2_5i25.0.7i77.0.0.output-03 <= spindle-open-collet
+#net hm2_5i25.0.7i77.0.0.output-03 <= tool-changed
+
+# --- Input ---
+
+net hm2_5i25.0.7i77.0.0.input-16-not => x-home-sw 
+net hm2_5i25.0.7i77.0.0.input-17-not => y-home-sw 
+net hm2_5i25.0.7i77.0.0.input-19-not => z-home-sw 
+net hm2_5i25.0.7i77.0.0.input-18-not => z-neg-limit 
+net hm2_5i25.0.7i77.0.0.input-20-not => x-neg-limit 
+net hm2_5i25.0.7i77.0.0.input-22-not => y-neg-limit
+net hm2_5i25.0.7i77.0.0.input-21     => probe-in 
+
