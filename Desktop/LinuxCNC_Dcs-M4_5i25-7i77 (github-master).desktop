@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 #true;false
-Terminal=true
+Terminal=false
 Name=LinuxCNC_Dcs-M4_5i25-7i77\n(github-master)
 Exec="/usr/bin/linuxcnc 'linuxcnc/configs/LinuxCNC_Dcs_M4-master/src/Dcs-M4_5i25-7i77.ini'"
 Type=Application
