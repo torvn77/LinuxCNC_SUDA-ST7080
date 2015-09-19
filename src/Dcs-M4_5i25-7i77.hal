@@ -1,11 +1,13 @@
-
 loadrt trivkins
 loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[TRAJ]AXES num_dio=4
 
 addf motion-command-handler servo-thread
 addf motion-controller servo-thread
+
 source linuxcnc.hal
 
+unlinkp iocontrol.0.user-enable-out
+unlinkp iocontrol.0.emc-enable-in
 net estop-loop iocontrol.0.user-enable-out =>  iocontrol.0.emc-enable-in
 
 source Devices/ToolChange/manual_toolchange.hal
