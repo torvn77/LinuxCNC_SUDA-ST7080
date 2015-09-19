@@ -10,6 +10,8 @@ net axis.0.home-sw-in    <= x-home-sw
 net axis.0.neg-lim-sw-in <= x-neg-limit
 net axis.0.pos-lim-sw-in <= x-pos-limit
 
+
+
 loadrt pid names=pid.x
 addf pid.x.do-pid-calcs servo-thread
 setp   pid.x.Pgain     [AXIS_0]P
@@ -32,6 +34,8 @@ net x-pos-fb       => pid.x.feedback
 #*******************
 #        AXIS X
 #*******************
+
+#net hm2_5i25.0.7i77.0.1.analogena x-enable 
 
 # ---PWM Generator signals/setup---
 
