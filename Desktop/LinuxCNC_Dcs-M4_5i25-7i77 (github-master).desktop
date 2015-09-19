@@ -2,9 +2,9 @@
 Version=1.0
 #true;false
 Terminal=true
-Name=LinuxCNC_DCS-M4_5i25-7i77\n(github-master)
-Exec="/usr/bin/linuxcnc 'linuxcnc/configs/LinuxCNC_Dcs_M4-master/src/DCS-M4_5i25-7i77.ini'"
+Name=LinuxCNC_Dcs-M4_5i25-7i77\n(github-master)
+Exec="/usr/bin/linuxcnc 'linuxcnc/configs/LinuxCNC_Dcs_M4-master/src/Dcs-M4_5i25-7i77.ini'"
 Type=Application
 Comment=
 Icon=/usr/share/linuxcnc/linuxcncicon.png
-Name[en_US]=LinuxCNC_DCS-M4_5i25-7i77\n(github-master)
+Name[en_US]=LinuxCNC_Dcs-M4_5i25-7i77\n(github-master)
