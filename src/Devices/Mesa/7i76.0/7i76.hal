@@ -1,4 +1,6 @@
 source Devices/Mesa/7i76.0/5i25-6i25.hal
+source Devices/Mesa/7i76.0/gpio.hal
+source Devices/Mesa/7i76.0/spindle.hal
 
 
 #*******************
@@ -103,35 +105,3 @@ net b-pos-fb  <=  hm2_5i25.0.stepgen.04.position-fb
 net b-pos-cmd =>  hm2_5i25.0.stepgen.04.position-cmd
 net b-enable  =>  hm2_5i25.0.stepgen.04.enable
 
-#*******************
-#  SPINDLE S
-#*******************
-
-# ---digital potentionmeter output signals/setup---
-
-setp   hm2_5i25.0.7i76.0.0.spinout-minlim    [SPINDLE_9]OUTPUT_MIN_LIMIT
-setp   hm2_5i25.0.7i76.0.0.spinout-maxlim    [SPINDLE_9]OUTPUT_MAX_LIMIT
-setp   hm2_5i25.0.7i76.0.0.spinout-scalemax  [SPINDLE_9]OUTPUT_SCALE
-
-net spindle-cmd  => hm2_5i25.0.7i76.0.0.spinout
-net spindle-on   => hm2_5i25.0.7i76.0.0.spinena
-#net spindle-ccw => hm2_5i25.0.7i76.0.0.spindir
-
-#******************************
-# connect miscellaneous signals
-#******************************
-
-#  ---estop signals---
-
-#net estop-out => hm2_5i25.0.7i76.0.0.input-??
-#net estop-in  <= hm2_5i25.0.7i76.0.0.input-??
-
-#  ---Tool measurent sensors signals---
-
-#net probe-in <= hm2_5i25.0.7i76.0.0.input-??
-
-#  ---home signals---
-#
-net min-home-x <= hm2_5i25.0.7i76.0.0.input-08-not
-net min-home-y <= hm2_5i25.0.7i76.0.0.input-09-not
-net max-home-z <= hm2_5i25.0.7i76.0.0.input-10-not
