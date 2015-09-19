@@ -4,13 +4,13 @@ loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[TRAJ]AX
 addf motion-command-handler servo-thread
 addf motion-controller servo-thread
 
-#source linuxcnc.hal
+source linuxcnc.hal
 
-#unlinkp iocontrol.0.user-enable-out
-#unlinkp iocontrol.0.emc-enable-in
+unlinkp iocontrol.0.user-enable-out
+unlinkp iocontrol.0.emc-enable-in
 net estop-loop iocontrol.0.user-enable-out =>  iocontrol.0.emc-enable-in
 
-#source Devices/ToolChange/manual_toolchange.hal
-#source Devices/Mesa/mesa.hal
+source Devices/ToolChange/manual_toolchange.hal
+source Devices/Mesa/mesa.hal
 #source Devices/Mesa/7i77.0/7i77.hal
 
