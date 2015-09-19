@@ -1,9 +1,7 @@
-loadusr halmeter
 source Devices/Mesa/7i77.0/5i25-6i25.hal
 source Devices/Mesa/7i77.0/gpio.hal
 source Devices/Mesa/7i77.0/spindle.hal
 source Devices/Mesa/7i77.0/axis-x.hal
 source Devices/Mesa/7i77.0/axis-y.hal
 source Devices/Mesa/7i77.0/axis-z.hal
-loadusr halmeter
 
