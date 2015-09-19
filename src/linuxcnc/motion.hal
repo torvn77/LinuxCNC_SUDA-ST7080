@@ -15,3 +15,12 @@ net spindle-revs               =>  motion.spindle-revs
 net spindle-at-speed           =>  motion.spindle-at-speed
 net spindle-vel-fb             =>  motion.spindle-speed-in
 net spindle-index-enable      <=>  motion.spindle-index-enable
+
+#  ---motion control signals---
+
+net in-position               <=  motion.in-position
+net machine-is-enabled        <=  motion.motion-enabled
+
+#  ---probe signal---
+
+net probe-in     =>  motion.probe-input
