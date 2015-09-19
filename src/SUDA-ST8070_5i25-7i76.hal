@@ -8,6 +8,8 @@ source linuxcnc/linuxcnc.hal
 source linuxcnc/axis-0.hal
 source linuxcnc/axis-1.hal
 source linuxcnc/axis-2.hal
+source linuxcnc/axis-3.hal
+source linuxcnc/axis-4.hal
 
 unlinkp iocontrol.0.user-enable-out
 unlinkp iocontrol.0.emc-enable-in
