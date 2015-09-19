@@ -15,5 +15,12 @@ net estop-loop iocontrol.0.user-enable-out =>  iocontrol.0.emc-enable-in
 
 source Devices/ToolChange/manual_toolchange.hal
 source Devices/Mesa/mesa.hal
-source Devices/Mesa/7i77.0/7i77.hal
+#source Devices/Mesa/7i77.0/7i77.hal
+source Devices/Mesa/7i77.0/5i25-6i25.hal
+source Devices/Mesa/7i77.0/axis-x.hal
+source Devices/Mesa/7i77.0/axis-y.hal
+source Devices/Mesa/7i77.0/axis-z.hal
+source Devices/Mesa/7i77.0/spindle.hal
+source Devices/Mesa/7i77.0/gpio.hal
+
 
