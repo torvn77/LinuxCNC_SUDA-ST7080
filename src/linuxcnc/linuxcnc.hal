@@ -4,9 +4,24 @@
 #  SPINDLE S
 #*******************
 
-net spindle-on   <= motion.spindle-on
-net spindle-ccw <= motion.spindle-reverse
-net spindle-cmd  <= motion.spindle-speed-out-abs
+#net spindle-on   <= motion.spindle-on
+#net spindle-ccw <= motion.spindle-reverse
+#net spindle-cmd  <= motion.spindle-speed-out-abs
+
+net motion.spindle-speed-out-rps     => spindle-vel-cmd-rps
+net motion.spindle-speed-out-rps-abs => spindle-vel-cmd-rps-abs
+net motion.spindle-speed-out         => spindle-vel-cmd
+net motion.spindle-speed-out-abs     => spindle-vel-cmd-rpm-abs
+net motion.spindle-on                => spindle-on
+net motion.spindle-forward           => spindle-cw
+net motion.spindle-reverse           => spindle-ccw
+net motion.spindle-brake             => spindle-brake
+net motion.spindle-revs              <= spindle-revs 
+net motion.spindle-at-speed          <= spindle-at-speed
+net motion.spindle-speed-in          <= spindle-vel-fb
+net motion.spindle-index-enable     <=> spindle-index-enable
+net motion.digital-out-03 => uncover-collet
+
 
 #******************************
 # connect miscellaneous signals
