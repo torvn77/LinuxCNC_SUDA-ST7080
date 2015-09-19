@@ -1,0 +1,29 @@
+
+
+#*******************
+#  SPINDLE S
+#*******************
+
+net spindle-on   <= motion.spindle-on
+net spindle-ccw <= motion.spindle-reverse
+net spindle-cmd  <= motion.spindle-speed-out-abs
+
+#******************************
+# connect miscellaneous signals
+#******************************
+
+#  ---Tool measurent sensors signals---
+
+net probe-in => motion.probe-input
+
+#  ---home signals---
+
+net min-home-x => axis.0.home-sw-in
+net min-home-x => axis.0.neg-lim-sw-in
+net min-home-y => axis.1.home-sw-in
+net min-home-y => axis.1.neg-lim-sw-in
+net max-home-z => axis.2.home-sw-in
+net max-home-z => axis.2.pos-lim-sw-in
+
+net estop-out     <=  iocontrol.0.user-enable-out
+net estop-out     =>  iocontrol.0.emc-enable-in
