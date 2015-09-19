@@ -1,9 +1,0 @@
-source linuxcnc/motion.hal
-source linuxcnc/halui.hal
-source linuxcnc/io.hal
-
-
-
-#******************************
-# connect miscellaneous signals
-#******************************

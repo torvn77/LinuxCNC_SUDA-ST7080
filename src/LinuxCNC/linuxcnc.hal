@@ -1,0 +1,3 @@
+source LinuxCNC/motion.hal
+source LinuxCNC/halui.hal
+source LinuxCNC/io.hal
