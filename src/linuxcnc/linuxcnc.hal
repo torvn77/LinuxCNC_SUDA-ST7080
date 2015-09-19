@@ -1,35 +1,13 @@
+source linuxcnc/motion.hal
+source linuxcnc/halui.hal
+source linuxcnc/io.hal
 
-
-#*******************
-#  SPINDLE S
-#*******************
-
-#net spindle-on   <= motion.spindle-on
-#net spindle-ccw <= motion.spindle-reverse
-#net spindle-cmd  <= motion.spindle-speed-out-abs
-
-net motion.spindle-speed-out-rps     => spindle-vel-cmd-rps
-net motion.spindle-speed-out-rps-abs => spindle-vel-cmd-rps-abs
-net motion.spindle-speed-out         => spindle-vel-cmd
-net motion.spindle-speed-out-abs     => spindle-vel-cmd-rpm-abs
-net motion.spindle-on                => spindle-on
-net motion.spindle-forward           => spindle-cw
-net motion.spindle-reverse           => spindle-ccw
-net motion.spindle-brake             => spindle-brake
-net motion.spindle-revs              <= spindle-revs 
-net motion.spindle-at-speed          <= spindle-at-speed
-net motion.spindle-speed-in          <= spindle-vel-fb
-net motion.spindle-index-enable     <=> spindle-index-enable
-net motion.digital-out-03 => uncover-collet
 
 
 #******************************
 # connect miscellaneous signals
 #******************************
 
-#  ---Tool measurent sensors signals---
-
-net probe-in => motion.probe-input
 
 #  ---home signals---
 
@@ -40,5 +18,3 @@ net min-home-y => axis.1.neg-lim-sw-in
 net max-home-z => axis.2.home-sw-in
 net max-home-z => axis.2.pos-lim-sw-in
 
-net estop-out     <=  iocontrol.0.user-enable-out
-net estop-out     =>  iocontrol.0.emc-enable-in
