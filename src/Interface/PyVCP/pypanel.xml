@@ -36,6 +36,11 @@
 					<text>"A --> 0"</text> 
 				</button>
 			<tablerow/>
+				<button>
+					<halpin>"manual_zero.b-axis.out"</halpin>
+					<text>"B --> 0"</text> 
+				</button>
+			<tablerow/>
 		</table>
 	</labelframe>
 	<labelframe text="Tools offset">
