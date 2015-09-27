@@ -1,0 +1,30 @@
+O<sys.matheight_abs> sub
+M70
+G21 G40 G49 G90 G94 G92.2
+G10 L2 P[#5220] Z0
+
+
+O<matheight_120> if [ #<_current_tool> NE #<_ini[MATERIAL_HEIGHT_PROBE]SENSOR_TOOL_NUM>]
+(DEBUG,Incorect tool, plase insert tool correct number [MATERIAL_HEIGHT_PROBE]SENSOR_TOOL_NUM)
+(DEBUG,Default:314)
+M02
+O<matheight_120> endif
+
+F[#<_ini[MATERIAL_HEIGHT_PROBE]COARSE_FEED_SEARCH>]
+G38.3 Z[#<_ini[AXIS_2]MIN_LIMIT>]
+G38.5 Z[#<_ini[AXIS_2]MAX_LIMIT>]
+F[#<_ini[MATERIAL_HEIGHT_PROBE]ACCURATE_FEED_SEARCH>]
+G38.3 Z[#<_ini[AXIS_2]MIN_LIMIT>]
+#<probe_bottom> = #5063
+F[#<_ini[MATERIAL_HEIGHT_PROBE]ACCURATE_FEED_LATCH>]
+G38.5 Z[#<_ini[AXIS_2]MAX_LIMIT>]
+#<probe_top> = #5063
+(DEBUG,<probe_top> = #<probe_top> )
+(DEBUG,<probe_bottom> = #<probe_bottom>)
+#<probe_result> = [[#<probe_bottom>+#<probe_top>]/2]
+
+G0 Z[#<_ini[AXIS_2]MAX_LIMIT>]
+M72
+G10 L2 P[#5220] Z[#<probe_result> - #<_ini[MATERIAL_HEIGHT_PROBE]SENSOR_HEIGHT>]
+O<sys.matheight_abs> endsub
+M02
