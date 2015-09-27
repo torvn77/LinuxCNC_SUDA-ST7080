@@ -1,1 +1,8 @@
-
+#net manual.zero_x-axis     
+#net manual.zero_y-axis     
+#net manual.zero_z-axis     
+#net manual.zero_a-axis     
+#net manual.zero_b-axis     
+net manual.zeroed_all_axis halui.mdi-command-05
+net manual.measumerent_material_height halui.mdi-command-06
+net manual.measumerent_tool_lenght     halui.mdi-command-07
