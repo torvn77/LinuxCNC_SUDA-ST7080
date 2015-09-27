@@ -28,3 +28,4 @@ M72
 G10 L2 P[#5220] Z[#<probe_result> - #<_ini[MATERIAL_HEIGHT_PROBE]SENSOR_HEIGHT>]
 O<sys.matheight_abs> endsub
 M02
+()
