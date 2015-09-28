@@ -1,5 +1,5 @@
 # Include your custom HAL commands here
 # This file will not be overwritten when you run PNCconf again
-#source Interface/Gamepad-devl/Gamepad.hal
-#source Interface/Axis/PyVCP_Panel.xml
+#source Interface/Gamepad-devl/Head.hal
+#source Interface/Axis/PyVCP_Panel.hal
 source MDI_Commands/mdi_commands.hal
