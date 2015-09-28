@@ -1,5 +1,5 @@
 loadrt trivkins
-loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[TRAJ]AXES num_dio=4
+loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[TRAJ]AXES num_dio=4 num_aio=0
 
 addf motion-command-handler servo-thread
 addf motion-controller servo-thread
@@ -19,8 +19,10 @@ source LinuxCNC/axis-4.hal
 
 unlinkp iocontrol.0.user-enable-out
 unlinkp iocontrol.0.emc-enable-in
-net estop-loop iocontrol.0.user-enable-out =>  iocontrol.0.emc-enable-in
+net linuxcnc.estop-loop iocontrol.0.user-enable-out =>  iocontrol.0.emc-enable-in
 
+source MDI_Commands/mdi_commands.hal
+source Interface/Gamepad-devl/Head.hal
 source Devices/ToolChange/manual_toolchange.hal
 source Devices/Mesa/mesa.hal
 source Devices/Mesa/7i76.0/7i76.hal
