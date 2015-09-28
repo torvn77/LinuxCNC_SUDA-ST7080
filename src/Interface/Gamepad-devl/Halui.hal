@@ -2,10 +2,10 @@
 net gamepad_jog-speed => halui.jog-speed
 setp halui.jog-deadband 0.000
 #----------Function Buttons "analog" mode------
-net gamepad_func_button_1-analog-mode   => halui.mdi-command-00
-net gamepad_func_button_2-analog-mode   => halui.mdi-command-01
-net gamepad_func_button_3-analog-mode   => halui.mdi-command-02
-net gamepad_func_button_4-analog-mode   => halui.mdi-command-03
+#net gamepad_func_button_1-analog-mode   => halui.mdi-command-00
+#net gamepad_func_button_2-analog-mode   => halui.mdi-command-01
+#net gamepad_func_button_3-analog-mode   => halui.mdi-command-02
+#net gamepad_func_button_4-analog-mode   => halui.mdi-command-03
 #net gamepad_func_button_5-analog-mode   => 
 #net gamepad_func_button_7-analog-mode   => 
 #net gamepad_func_button_9-analog-mode   => 
