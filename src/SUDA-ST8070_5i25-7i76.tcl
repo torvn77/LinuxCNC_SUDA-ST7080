@@ -10,19 +10,19 @@ addf motion-controller servo-thread
 # connect miscellaneous signals
 #******************************
 
-source LinuxCNC/linuxcnc.hal
-source LinuxCNC/axis-0.hal
-source LinuxCNC/axis-1.hal
-source LinuxCNC/axis-2.hal
-source LinuxCNC/axis-3.hal
-source LinuxCNC/axis-4.hal
+source LinuxCNC/linuxcnc.tcl
+source LinuxCNC/axis-0.tcl
+source LinuxCNC/axis-1.tcl
+source LinuxCNC/axis-2.tcl
+source LinuxCNC/axis-3.tcl
+source LinuxCNC/axis-4.tcl
 
 unlinkp iocontrol.0.user-enable-out
 unlinkp iocontrol.0.emc-enable-in
 net linuxcnc.estop-loop iocontrol.0.user-enable-out =>  iocontrol.0.emc-enable-in
 
-source MDI_Commands/mdi_commands.hal
-source Interface/Gamepad-devl/Head.hal
-source Devices/ToolChange/manual_toolchange.hal
-source Devices/Mesa/mesa.hal
-source Devices/Mesa/7i76.0/7i76.hal
+source MDI_Commands/mdi_commands.tcl
+source Interface/Gamepad-devl/Head.tcl
+source Devices/ToolChange/manual_toolchange.tcl
+source Devices/Mesa/mesa.tcl
+source Devices/Mesa/7i76.0/7i76.tcl
