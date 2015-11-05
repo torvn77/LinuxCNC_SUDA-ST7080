@@ -14,3 +14,5 @@ git pull git://github.com/torvn77/LinuxCNC_Dcs_M4.git <br>
 Краткая справка по командам git <br>
 http://www.opennet.ru/tips/info/2179.shtml <br>
 http://habrahabr.ru/company/mailru/blog/267595/ <br>
+Хоорошая документация по Git:
+http://git-scm.com/docs
