@@ -1,0 +1,69 @@
+unload all
+#***************************
+loadrt trivkins
+loadrt motmod servo_period_nsec=1000000 traj_period_nsec=100000 base_period_nsec=50000 num_joints=3 num_dio=4 num_aio=4
+
+addf motion-command-handler servo-thread
+addf motion-controller servo-thread
+
+loadrt hostmot2
+loadrt hm2_pci config="num_encoders=3 num_pwmgens=0 num_3pwmgens=0 num_stepgens=0"
+addf hm2_5i25.0.read servo-thread
+addf hm2_5i25.0.write servo-thread
+addf hm2_5i25.0.read_gpio servo-thread
+addf hm2_5i25.0.write_gpio servo-thread
+
+#*******************
+#  AXIS X
+#*******************
+loadrt pid names=pid.x
+addf pid.x.do-pid-calcs servo-thread
+setp   pid.x.Pgain     35
+setp   pid.x.Igain     140
+setp   pid.x.Dgain     0.5
+setp   pid.x.bias      0.0
+setp   pid.x.FF0       0.0
+setp   pid.x.FF1       0.5
+setp   pid.x.FF2       0.1
+setp   pid.x.deadband  0.0
+setp   pid.x.maxoutput 10
+
+net x-index-enable  <=>  pid.x.index-enable
+net x-enable       => pid.x.enable
+net x-output       => pid.x.output
+net x-pos-cmd      => pid.x.command
+net x-vel-fb       => pid.x.feedback-deriv
+net x-pos-fb       => pid.x.feedback
+
+#*******************
+#        AXIS X
+#*******************
+
+# ---PWM Generator signals/setup---
+
+setp hm2_5i25.0.7i77.0.1.analogout0-scalemax 10
+setp hm2_5i25.0.7i77.0.1.analogout0-minlim   -10.0
+setp hm2_5i25.0.7i77.0.1.analogout0-maxlim   10.0
+
+net x-output => hm2_5i25.0.7i77.0.1.analogout0
+
+# ---Encoder feedback signals/setup---
+
+setp hm2_5i25.0.encoder.00.counter-mode 0
+setp hm2_5i25.0.encoder.00.filter 1
+setp hm2_5i25.0.encoder.00.index-invert 0
+setp hm2_5i25.0.encoder.00.index-mask 0
+setp hm2_5i25.0.encoder.00.index-mask-invert 0
+setp hm2_5i25.0.encoder.00.scale 2000
+
+net x-pos-fb <= hm2_5i25.0.encoder.00.position
+net x-vel-fb <= hm2_5i25.0.encoder.00.velocity
+net x-index-enable <=> hm2_5i25.0.encoder.00.index-enable
+net x-pos-rawcounts <= hm2_5i25.0.encoder.00.rawcounts
+
+#############################
+sets x-enable 1
+setp hm2_5i25.0.7i77.0.1.analogena 1
+#setp hm2_5i25.0.7i77.0.1.spinena 1
+
+loadusr halshow
