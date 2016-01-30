@@ -1,4 +1,4 @@
-O<sys.probe_lenght> sub
+O<sys.probe_lenght.first> sub
 G49 G40 G92.2
 O0110 if [ #<_coord_system> NE 590 ]
 G10 L2 P6 X0 Y0 Z0 R0
@@ -55,6 +55,6 @@ G10 L1 P#<_current_tool> Z#<comp_z>
 G43
 G0 Z[#<_ini[AXIS_2]MAX_LIMIT> - #5403]
 G54
-O<sys.probe_lenght> endsub
+O<sys.probe_lenght.first> endsub
 G54
 M02
