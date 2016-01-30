@@ -35,7 +35,7 @@ net  gamepad_analog_jog_vel-0 => halui.jog.0.analog
 net  gamepad_analog_jog_vel-1 => halui.jog.1.analog
 #Оси Z(2) и A(3) перекинуты в соответствии с их местом на джойстике
 net  gamepad_analog_jog_vel-3 => halui.jog.2.analog
-net  gamepad_analog_jog_vel-2 => halui.jog.3.analog
+#net  gamepad_analog_jog_vel-2 => halui.jog.3.analog
 
 
 #------------Continue Jog Buttons---------
