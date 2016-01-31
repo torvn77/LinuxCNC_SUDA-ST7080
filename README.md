@@ -16,4 +16,5 @@ http://www.opennet.ru/tips/info/2179.shtml <br>
 http://habrahabr.ru/company/mailru/blog/267595/ <br>
 Хоорошая документация по Git:
 http://git-scm.com/docs
-[img](imj.md/Screenshot-git add-modifi.png)
+[img](https://github.com/torvn77/LinuxCNC_SUDA-ST7080/blob/master/imj.md/Screenshot-git%20add-modifi.png?raw=true)
+[img](https://github.com/torvn77/LinuxCNC_SUDA-ST7080/blob/master/imj.md/Screenshot-git%20add-modifi.png)
