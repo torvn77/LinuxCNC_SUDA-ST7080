@@ -18,3 +18,4 @@ http://habrahabr.ru/company/mailru/blog/267595/ <br>
 http://git-scm.com/docs
 [img](https://github.com/torvn77/LinuxCNC_SUDA-ST7080/blob/master/imj.md/Screenshot-git%20add-modifi.png?raw=true)
 [img](https://github.com/torvn77/LinuxCNC_SUDA-ST7080/blob/master/imj.md/Screenshot-git%20add-modifi.png)
+[img](https://github.com/torvn77/LinuxCNC_SUDA-ST7080/tree/master/imj.md/ Screenshot-git add-modifi.png)
