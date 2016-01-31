@@ -16,3 +16,4 @@ http://www.opennet.ru/tips/info/2179.shtml <br>
 http://habrahabr.ru/company/mailru/blog/267595/ <br>
 Хоорошая документация по Git:
 http://git-scm.com/docs
+[img](imj.md/Screenshot-git add-modifi.png)
