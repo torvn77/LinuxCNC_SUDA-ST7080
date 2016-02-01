@@ -16,8 +16,12 @@ http://www.opennet.ru/tips/info/2179.shtml <br>
 http://habrahabr.ru/company/mailru/blog/267595/ <br>
 Хоорошая документация по Git:
 http://git-scm.com/docs
-[img](https://github.com/torvn77/LinuxCNC_SUDA-ST7080/blob/master/imj.md/Screenshot-git%20add-modifi.png?raw=true)
-[img](https://github.com/torvn77/LinuxCNC_SUDA-ST7080/blob/master/imj.md/Screenshot-git%20add-modifi.png)
-[img](https://github.com/torvn77/LinuxCNC_SUDA-ST7080/tree/master/imj.md/Screenshot-git add-modifi.png)
 
-[img](https://github.com/torvn77/LinuxCNC_SUDA-ST7080/master/imj.md/Screenshot-git add-modifi.png)
+ssh-keygen -t rsa -C "torvn77@github.com" 
+git clone git@github.com:torvn77/LinuxCNC_SUDA-ST7080.git Git/test 
+cd Git/test 
+echo gggg >test.txt 
+git add . 
+git commit -m "test commit" 
+git push 
+exit
