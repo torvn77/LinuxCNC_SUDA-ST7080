@@ -17,11 +17,11 @@ http://habrahabr.ru/company/mailru/blog/267595/ <br>
 Хоорошая документация по Git:
 http://git-scm.com/docs
 
-ssh-keygen -t rsa -C "torvn77@github.com" 
-git clone git@github.com:torvn77/LinuxCNC_SUDA-ST7080.git Git/test 
-cd Git/test 
-echo gggg >test.txt 
+ssh-keygen -t rsa -C "torvn77@github.com" <br>
+git clone git@github.com:torvn77/LinuxCNC_SUDA-ST7080.git Git/test <br>
+cd Git/test <br>
+echo gggg >test.txt <br>
 git add . 
-git commit -m "test commit" 
-git push 
-exit
+git commit -m "test commit" <br>
+git push <br>
+exit <br>
