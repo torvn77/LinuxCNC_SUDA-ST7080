@@ -1,9 +1,0 @@
-#
-#******************************
-# connect miscellaneous signals
-#******************************
-
-unlinkp iocontrol.0.user-enable-out
-unlinkp iocontrol.0.emc-enable-in
-net loopback.linuxcnc.estop iocontrol.0.user-enable-out =>  iocontrol.0.emc-enable-in
-
