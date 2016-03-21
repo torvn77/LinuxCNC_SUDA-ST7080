@@ -1,7 +1,0 @@
-O<basket_1.action> sub
-(DEBUG, Called basket_1.action function)
-
-O<basket_1.eject_tool> call
-O<basket_1.inject_tool> call
-
-O<basket_1.action> endsub

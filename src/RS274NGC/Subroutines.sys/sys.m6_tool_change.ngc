@@ -1,6 +1,0 @@
-O<m6_tool_change> sub
-(DEBUG, _selected_tool = #<_selected_tool>)
-(DEBUG, _current_tool = #<_current_tool>)
-M02
-O<m6_tool_change> endsub
-M02
