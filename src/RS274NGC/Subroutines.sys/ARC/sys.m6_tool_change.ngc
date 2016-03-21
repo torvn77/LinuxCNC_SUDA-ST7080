@@ -1,0 +1,14 @@
+O<m6_tool_change> sub
+(init)
+(replace)
+(end_work)
+
+(DEBUG, _selected_tool = #<_selected_tool>)
+(DEBUG, _current_tool = #<_current_tool>)
+O<sys.replace_tool> call [1]
+
+(change_lenght_comp)
+(change_radius_comp)
+O<m6_tool_change> endsub
+M02
+
