@@ -1,0 +1,15 @@
+O<basket_1.eject_tool> sub
+(DEBUG, Called basket_1_eject_tool function)
+(DEBUG, _pocket=#<_pocket>)
+(DEBUG, _basket=#<_basket>)
+
+//включить продувку M63 P1
+//пауза
+//опуститься 
+//расжать цангу
+//подняться 
+//зажать цангу
+// подняться на максимальную высоту
+// правильно выйти из ячейки в рабочее пространство
+O<basket_1.eject_tool> endsub
+M02

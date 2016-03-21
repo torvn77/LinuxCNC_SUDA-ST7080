@@ -1,0 +1,29 @@
+O<sys.get_poc_info> sub
+(DEBUG, Called sys.get_poc_info function)
+
+#<required_tool> = #2
+
+O130 if [ #<required_tool> EQ 1 ]
+#<_basket> = #<_ini[TOOL_1]BASKET>
+#<_pocket> = #<_ini[TOOL_1]POCKET>
+
+O130 elseif [ #<required_tool> EQ 2 ]
+#<_basket> = #<_ini[TOOL_2]BASKET>
+#<_pocket> = #<_ini[TOOL_2]POCKET>
+
+O130 elseif [ #<required_tool> EQ 3 ]
+#<_basket> = #<_ini[TOOL_3]BASKET>
+#<_pocket> = #<_ini[TOOL_3]POCKET>
+
+O130 elseif [ #<required_tool> EQ 4 ]
+#<_basket> = #<_ini[TOOL_4]BASKET>
+#<_pocket> = #<_ini[TOOL_4]POCKET>
+
+O130 else
+(DEBUG, get_poc_info Error required_tool = #<required_tool> Programm Stoping)
+M02
+
+O130 endif
+
+O<sys.get_poc_info> endsub
+M02
