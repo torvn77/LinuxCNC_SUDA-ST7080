@@ -9,7 +9,7 @@
 
 #  ---Tool measurent sensors signals---
 
-net raw_gpio.probe-in <= hm2_5i25.0.7i76.0.0.input-11-not
+net gpio_raw.probe-in <= hm2_5i25.0.7i76.0.0.input-11-not
 
 #  ---home signals---
 #

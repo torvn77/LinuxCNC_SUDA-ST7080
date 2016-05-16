@@ -1,6 +1,7 @@
 #
 loadrt $::EMCMOT(KINEMATICS)
-loadrt $::EMCMOT(EMCMOT) base_period_nsec=$::EMCMOT(BASE_PERIOD) traj_period_nsec=$::EMCMOT(TRAJ_PERIOD) servo_period_nsec=$::EMCMOT(SERVO_PERIOD) num_joints=$::TRAJ(AXES) num_dio=$::EMCMOT(NUM_DIO) num_aio=$::EMCMOT(NUM_AIO)
+# base_period_nsec=$::EMCMOT(BASE_PERIOD)
+loadrt $::EMCMOT(EMCMOT) servo_period_nsec=$::EMCMOT(SERVO_PERIOD) traj_period_nsec=$::EMCMOT(TRAJ_PERIOD) num_joints=$::TRAJ(AXES) num_dio=$::EMCMOT(NUM_DIO) num_aio=$::EMCMOT(NUM_AIO)
 addf motion-command-handler servo-thread
 addf motion-controller servo-thread
 
@@ -27,11 +28,11 @@ net lcnc.tool_change           <= iocontrol.0.tool-change
 net lcnc.tool_changed          => iocontrol.0.tool-changed
 net lcnc.tool_number           <= iocontrol.0.tool-prep-number
 
-#net lcnc.spindle_cmd-rpm     <= motion.spindle-speed-out
-#net lcnc.spindle_cmd-rpm-abs <= motion.spindle-speed-out-abs
-#net lcnc.spindle_cmd-rps     <= motion.spindle-speed-out-rps
- net lcnc.spindle_cmd-rps-abs <= motion.spindle-speed-out-rps-abs
 
+net lcnc.spindle_cmd-abs  <= motion.spindle-speed-out-abs
+net lcnc.spindle_cw       <= motion.spindle-forward
+net lcnc.spindle_ccw      <= motion.spindle-reverse
+#net lcnc.spindle_brake           <= motion.spindle-brake
 
 net lcnc.spindle_at-speed    => motion.spindle-at-speed
 sets lcnc.spindle_at-speed true
