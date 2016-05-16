@@ -1,0 +1,199 @@
+;
+; G - Code configuration file 
+;
+; History
+;
+; Who                           When      What
+; ===                           ========  ========================================
+; torvn77@mail.ru               19.12.15 Added LinuxCNC specific code
+;
+;
+DESCRIPTION = "LinuxCNC Engraver z_min= -1.4 (*.ngc)"
+;
+FILE_EXTENSION = "ngc"
+;
+; Cariage return - line feed at end of each line
+;
+END_OF_LINE = "[10]"
+;
+; Block numbering 
+;
+LINE_NUM_START     = 0
+LINE_NUM_INCREMENT = 10
+LINE_NUM_MAXIMUM   = 999999
+;
+; Set up default formating for variables
+;
+; Line numbering
+FORMAT = [N|@||1.0]
+; Spindle Speed
+FORMAT = [S|@||1.0]
+; Feed Rate
+FORMAT = [F|@||1.0]
+; Tool moves in x,y and z
+FORMAT = [X|@||1.4]
+FORMAT = [Y|@||1.4]
+FORMAT = [Z|@||1.4]
+FORMAT = [SZ|@||1.4]
+FORMAT = [I|@||1.6]
+FORMAT = [J|@||1.6]
+; Home tool positions 
+FORMAT = [XH|@||1.2]
+FORMAT = [YH|@||1.2]
+FORMAT = [ZH|@||1.2]
+;
+MIN_ARC_LENGTH=0.05
+;
+UNITS = MM
+;
+; Set up program header
+;
+START = "( )"
+START = "#<_false> = -1.0"
+START = "#<_true>  = +1.0"
+START = "#<_null>  =  0.0"
+START = " "
+START = "#<_safe_z> = [SZ]"
+START = " "
+START = "#<_z_min>  = -1.4"
+START = " "
+START = "#<_plunge_feed>            = [FP]"
+START = "#<_plunge_shpindle_speed>  = [S]"
+START = " "
+START = "#<_line_feed>              = [FC]"
+START = "#<_line_shpindle_speed>    = [S]"
+START = " "
+START = "#<_curve_feed>             = #<_line_feed>"
+START = "#<_curve_shpindle_speed>   = #<_line_shpindle_speed>"
+START = " "
+START = "#<_if_z_move_feed>           = #<_plunge_feed>"
+START = "#<_if_z_move_shpindle_speed> = #<_plunge_shpindle_speed>"
+START = " "
+START = "O<nc-prog_mode_int> sub"
+START   = " "
+START   = "[9]O<nc-prog_mode_int-if-00> if [91] #<_x> NE #<_old_x> [93]"
+START      = "[9][9]#<_change_prog_mode> = #<_false>"
+START   = "[9]O<nc-prog_mode_int-if-00> endif"
+START   = " "
+START   = "[9]O<nc-prog_mode_int-if-01> if [91] #<_y> NE #<_old_y> [93]"
+START      = "[9][9]#<_change_prog_mode> = #<_false>"
+START   = "[9]O<nc-prog_mode_int-if-01> endif"
+START   = " "
+START   = "[9]O<nc-prog_mode_int-if-02> if [91] #<_z> NE #<_old_z> [93]"
+START      = "[9][9]#<_change_prog_mode> = #<_false>"
+START   = "[9]O<nc-prog_mode_int-if-02> endif"
+START   = " "
+START   = "[9]O<nc-prog_mode_int-if-10> if [91] #<_change_prog_mode> EQ #<_true> [93]"
+START      = "[9][9]O<nc-prog_mode_int-if> return"
+START   = "[9]O<nc-prog_mode_int-if-10> endif"
+
+START   = " "
+START   = " "
+START   = "#<_change_prog_mode> = #<_false> "
+START   = " "
+START   = "G21 G94 G17 G54 G90 G91.1"
+START   = " "
+START   = "G64 Q0.02P0.02"
+START   = " "
+START   = "F0 [S|@|S] M3"
+START   = "G04 P8"
+START   = " "
+START = "O<nc-prog_mode_int> endsub"
+START = " "
+START = " "
+START = "O<rapid_int> sub"
+START   = "[9]O<rapid_if2> if [91]#<_z> NE #<_safe_z> [93]"
+START      = "[9][9]G53 G00 Z#<_ini[91]AXIS_2[93]MAX_LIMIT>"
+START   = "[9]O<rapid_if2> endif"
+START   = "[9]G00 X#1 Y#2"
+START   = "[9]G00 Z#3"
+START = "O<rapid_int> endsub"
+START = " "
+START = "O<retract_int> sub"
+START   = "[9]G00 Z#<_safe_z>"
+START = "O<retract_int> endsub"
+START = " "
+START = "O<plunge_int> sub"
+START   = "[9]F#<_plunge_feed> S#<_plunge_shpindle_speed> "
+START   = "[9]G01 X#1 Y#2 Z#3"
+START = "O<plunge_int> endsub"
+START = " "
+START = "O<g01_int> sub"
+START   = "[9]O<g01_if1> if [91][91]#<_z> LE #<_z_min>[93] AND [91]#3 LE #<_z_min>[93][93]"
+START     = "[9][9]F#<_line_feed> S#<_line_shpindle_speed>"
+START   = "[9]O<g01_if1> else"
+START     = "[9][9]F#<_if_z_move_feed> S#<_if_z_move_shpindle_speed>"
+START   = "[9]O<g01_if1> endif"
+START   = "[9][9]G01 X#1 Y#2 Z#3" 
+START = "O<g01_int> endsub"
+START = " "
+START = "O<g02_int> sub"
+START   = "[9]O<g02_if1> if [91][91]#<_z> LE #<_z_min>[93] AND [91]#3 LE #<_z_min>[93][93]"
+START     = "[9][9]F#<_curve_feed> S#<_curve_shpindle_speed>"
+START   = "[9]O<g02_if1> else"
+START     = "[9][9]F#<_if_z_move_feed> S#<_if_z_move_shpindle_speed>"
+START   = "[9]O<g02_if1> endif"
+START   = "[9][9]G02 X#1 Y#2 Z#3 I#4 J#5"
+START = "O<g02_int> endsub"
+START = " "
+START = "O<g03_int> sub"
+START   = "[9]O<g03_if1> if [91][91]#<_z> LE #<_z_min>[93] AND [91]#3 LE #<_z_min>[93][93]"
+START     = "[9][9]F#<_curve_feed> S#<_curve_shpindle_speed>"
+START   = "[9]O<g03_if1> else"
+START     = "[9][9]F#<_if_z_move_feed> S#<_if_z_move_shpindle_speed>"
+START   = "[9]O<g03_if1> endif"
+START   = "[9][9]G03 X#1 Y#2 Z#3 I#4 J#5"
+START = "O<g03_int> endsub"
+START = " "
+START = " "
+START = "(START_[91]START_PROG_SEC[93]) "
+START = " "
+START = "G17 G21 G40 G49 G54 G90 G91.1 G92.1 G94"
+START = " "
+START = "G53 G0 Z0"
+START = "G0[XH|@|X][YH|@|Y]"
+START = " "
+START = "#<_change_prog_mode> = #<_false> "
+START = "#<_old_x> = [91][XH][93]"
+START = "#<_old_y> = [91][YH][93]"
+START = "#<_old_z> = [91][ZH][93]"
+START = "O<nc-prog_mode_int> call"
+START = " "
+START = "(END_[91]START_PROG_SEC[93]) "
+START = " "
+START = " "
+
+;
+; Program moves
+;
+FIRST_RAPID_RATE_MOVE  = "(FRp)[10]#<_change_prog_mode> = #<_true>[10]O<rapid_int> call [91][X][93] [91][Y][93] [91][Z][93]"
+RAPID_RATE_MOVE                 = "#<_change_prog_mode> = #<_true>[10]O<rapid_int> call [91][X][93] [91][Y][93] [91][Z][93]"
+
+FIRST_PLUNGE_RATE_MOVE = "(FPl)[10]#<_change_prog_mode> = #<_true>[10]O<plunge_int> call [91][X][93] [91][Y][93] [91][Z][93]"
+PLUNGE_RATE_MOVE                = "#<_change_prog_mode> = #<_true>[10]O<plunge_int> call [91][X][93] [91][Y][93] [91][Z][93]"
+
+RETRACT_MOVE           = "(Rtr)[10]#<_change_prog_mode> = #<_true>[10]O<retract_int> call [91][X][93] [91][Y][93] [91][Z][93]"
+
+FIRST_FEED_RATE_MOVE   = "#<_change_prog_mode> = #<_true>[10]O<g01_int> call [91][X][93] [91][Y][93] [91][Z][93]"
+FEED_RATE_MOVE         = "#<_change_prog_mode> = #<_true>[10]O<g01_int> call [91][X][93] [91][Y][93] [91][Z][93]"
+
+FIRST_CW_ARC_MOVE      = "#<_change_prog_mode> = #<_true>[10]O<g02_int> call [91][X][93] [91][Y][93] [91][Z][93] [91][I][93] [91][J][93]"
+CW_ARC_MOVE            = "#<_change_prog_mode> = #<_true>[10]O<g02_int> call [91][X][93] [91][Y][93] [91][Z][93] [91][I][93] [91][J][93]"
+
+FIRST_CCW_ARC_MOVE     = "#<_change_prog_mode> = #<_true>[10]O<g03_int> call [91][X][93] [91][Y][93] [91][Z][93] [91][I][93] [91][J][93]"
+CCW_ARC_MOVE           = "#<_change_prog_mode> = #<_true>[10]O<g03_int> call [91][X][93] [91][Y][93] [91][Z][93] [91][I][93] [91][J][93]"
+;
+; End of file
+;
+END = ""
+END = ""
+END = "(START_[91]END_PROG_SEC[93]) "
+END = ""
+END = "M05 M09 F0"
+END = "G04 P4"
+END = "G17 G21 G40 G49 G54 G90 G91.1 G92.1 G94"
+END = "G53 G0 Z0"
+END = "G53 G00 X50"
+END = ""
+END = "(END_[91]END_PROG_SEC[93]) "
+END = "M02"
