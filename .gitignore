@@ -1,2 +1,9 @@
 *.expanded
 *~
+.ssh
+*.key
+*.pub
+*.bak
+src/ENV/MDI_History.txt
+src/ENV/position.txt
+src/ENV/rs274ngc_variables.txt
