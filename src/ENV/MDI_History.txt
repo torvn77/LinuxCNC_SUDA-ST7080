@@ -1,8 +1,0 @@
-G10 L1 X0Y0Z0
-G10 L2 P[#5220] X0Y0Z0
-T3M6
-G0 X0Y0
-T3M6
-(DEBUG, Z=#<_z> , motion.probe-input = #<_hal[motion.probe-input]>)
-T3M6
-g0 y20 x12
