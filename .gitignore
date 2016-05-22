@@ -1,6 +1,7 @@
 *.expanded
 *~
 .ssh
+.ssh/*
 *.key
 *.pub
 *.bak

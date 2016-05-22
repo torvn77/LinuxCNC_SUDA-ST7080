@@ -1,0 +1,4 @@
+O<sys.mdi_command-02> sub
+(PRINT, call <sys.mdi_command-02>)
+O<sys.mdi_command-02> endsub
+M02

@@ -10,7 +10,7 @@
 			<tablerow/>
 				<button>
 					<halpin>"manual_zero.x-axis.out"</halpin>
-					<text>"X --> 0"</text> 
+					<text>"X = 0"</text> 
 				</button>
 				<button>
 					<halpin>"measumerent_material_height.out"</halpin>
@@ -19,17 +19,17 @@
 			<tablerow/>
 				<button>
 					<halpin>"manual_zero.y-axis.out"</halpin>
-					<text>"X --> 0"</text> 
+					<text>"Y = 0"</text> 
 				</button>
 			<tablerow/>
 				<button>
 					<halpin>"manual_zero.z-axis.out"</halpin>
-					<text>"Z --> 0"</text> 
+					<text>"Z = 0"</text> 
 				</button>
 			<tablerow/>
 				<button>
 					<halpin>"manual_zero.a-axis.out"</halpin>
-					<text>"A --> 0"</text> 
+					<text>"A = 0"</text> 
 				</button>
 			<tablerow/>
 		</table>

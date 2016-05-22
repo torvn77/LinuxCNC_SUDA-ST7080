@@ -7,48 +7,97 @@
 					</label>
 		<table>
 			<tablesticky sticky="w"/>
+
 			<tablerow/>
 				<button>
-					<halpin>"manual_zero.x-axis.out"</halpin>
-					<text>"X --> 0"</text> 
+					<halpin>"axis-xyz.zero.out"</halpin>
+					<text>"XYZ = 0"</text> 
 				</button>
+				<button>
+					<halpin>"axis-x.manual_zero.out"</halpin>
+					<text>"X = 0"</text> 
+				</button>
+
+			<tablerow/>
+				<button>
+					<halpin>"axis-xy.move.out"</halpin>
+					<text>"XY >> 0"</text> 
+				</button>
+				<button>
+					<halpin>"axis-y.manual_zero.out"</halpin>
+					<text>"Y = 0"</text> 
+				</button>
+
+			<tablerow/>
+				<button>
+					<halpin>"Parking.move.out"</halpin>
+					<text>"Parking"</text> 
+				</button>
+				<button>
+					<halpin>"axis-z.manual_zero.out"</halpin>
+					<text>"Z = 0"</text> 
+				</button>
+
+		</table>
+	</labelframe>
+	<labelframe text="Tools offset">
+		<table>
+			<tablerow/>
+				<led>
+					<halpin>"probe-sensor-led.in"</halpin>
+					<size>50</size>
+					<on_color>"green"</on_color>
+					<off_color>"gray"</off_color>
+				</led>
+					<label>
+					    <text>"()"</text>
+					    <font>("Helvetica",8)</font>
+					</label>
+			<tablerow/>
+				<bar>
+					<halpin>"move-speed.in"</halpin>
+					<max_>2.0</max_>
+				</bar>
+				<radiobutton>
+					<choices>["disabled","hight","midle","low"]</choices>
+					<halpin>"my-radio"</halpin>
+					<initval>0</initval>
+				</radiobutton>
+			<tablerow/>
+
+				<button>
+					<halpin>"axis-z.change_offset-4.0.out"</halpin>
+					<text>"Z = -4.0"</text> 
+				</button>
+				<button>
+					<halpin>"axis-z.change_offset-2.0.out"</halpin>
+					<text>"Z = -2.0"</text> 
+				</button>
+				<button>
+					<halpin>"axis-z.change_offset-1.4..out"</halpin>
+					<text>"Z = -1.4"</text> 
+				</button>
+				<button>
+					<halpin>"axis-z.change_offset-0.0.out"</halpin>
+					<text>"Z = 0.0"</text> 
+				</button>
+		</table>
 				<button>
 					<halpin>"measumerent_material_height.out"</halpin>
 					<text>"Measumerent \nmaterial height"</text> 
 				</button>
-			<tablerow/>
-				<button>
-					<halpin>"manual_zero.y-axis.out"</halpin>
-					<text>"X --> 0"</text> 
-				</button>
-				<button>
-					<halpin>"zeroed_all_axis.out"</halpin>
-					<text>"Zeroed offset\nall axis"</text> 
-				</button>
-			<tablerow/>
-				<button>
-					<halpin>"manual_zero.z-axis.out"</halpin>
-					<text>"Z --> 0"</text> 
-				</button>
-			<tablerow/>
-				<button>
-					<halpin>"manual_zero.a-axis.out"</halpin>
-					<text>"A --> 0"</text> 
-				</button>
-			<tablerow/>
-				<button>
-					<halpin>"manual_zero.b-axis.out"</halpin>
-					<text>"B --> 0"</text> 
-				</button>
-			<tablerow/>
-		</table>
 	</labelframe>
+				
 	<labelframe text="Tools offset">
 
 					<label>
 					    <text>"(G10 L1;G10 L10;G10 L11;\nG41.xG42.x-G40;G43.x-G49;G38.x)"</text>
 					    <font>("Helvetica",8)</font>
 					</label>
+				<button>
+					<halpin>"init_tool_lenght.out"</halpin>
+					<text>"Init tool lenght"</text> 
+				</button>
 				<button>
 					<halpin>"measumerent_tool_lenght.out"</halpin>
 					<text>"Measumerent \ntool lenght"</text> 
