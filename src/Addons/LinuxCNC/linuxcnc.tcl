@@ -18,7 +18,7 @@ net lcnc.01_joint-pos-fb <= axis.1.joint-pos-fb
 net lcnc.02_amp-enable   <= axis.2.amp-enable-out
 net lcnc.02_pos-cmd      <= axis.2.motor-pos-cmd
 net lcnc.02_pos-fb  => axis.2.motor-pos-fb
-net lcnc.2_joint-pos-fb <= axis.2.joint-pos-fb
+net lcnc.02_joint-pos-fb <= axis.2.joint-pos-fb
 
 net lcnc.estop_out             <= iocontrol.0.user-enable-out
 net lcnc.estop_in              => iocontrol.0.emc-enable-in
@@ -33,6 +33,7 @@ net lcnc.spindle_cmd-abs  <= motion.spindle-speed-out-abs
 net lcnc.spindle_cw       <= motion.spindle-forward
 net lcnc.spindle_ccw      <= motion.spindle-reverse
 #net lcnc.spindle_brake           <= motion.spindle-brake
-
 net lcnc.spindle_at-speed    => motion.spindle-at-speed
 sets lcnc.spindle_at-speed true
+
+net lcnc.motion.current-vel motion.current-vel

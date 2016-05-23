@@ -6,36 +6,34 @@
 					    <font>("Helvetica",8)</font>
 					</label>
 		<table>
-			<tablesticky sticky="w"/>
-
 			<tablerow/>
 				<button>
-					<halpin>"axis-xyz.zero.out"</halpin>
-					<text>"XYZ = 0"</text> 
+					<halpin>"axis-xyz.zeroed_g54_offset.out"</halpin>
+					<text>"Rel XYZ = abs"</text> 
 				</button>
 				<button>
-					<halpin>"axis-x.manual_zero.out"</halpin>
-					<text>"X = 0"</text> 
-				</button>
-
-			<tablerow/>
-				<button>
-					<halpin>"axis-xy.move.out"</halpin>
-					<text>"XY >> 0"</text> 
-				</button>
-				<button>
-					<halpin>"axis-y.manual_zero.out"</halpin>
-					<text>"Y = 0"</text> 
+					<halpin>"axis-x.change_g54_offset-0.0.out"</halpin>
+					<text>"Rel X = 0"</text> 
 				</button>
 
 			<tablerow/>
 				<button>
-					<halpin>"Parking.move.out"</halpin>
-					<text>"Parking"</text> 
+					<halpin>"axis-xy.move_g54_rel_null.out"</halpin>
+					<text>"XY move >> rel 0"</text> 
 				</button>
 				<button>
-					<halpin>"axis-z.manual_zero.out"</halpin>
-					<text>"Z = 0"</text> 
+					<halpin>"axis-y.change_g54_offset-0.0.out"</halpin>
+					<text>"Rel Y = 0"</text> 
+				</button>
+
+			<tablerow/>
+				<button>
+					<halpin>"machine.parking.move.out"</halpin>
+					<text>"Parking machine"</text> 
+				</button>
+				<button>
+					<halpin>"axis-z.change_g54_offset-0.0.out"</halpin>
+					<text>"Rel Z = 0"</text> 
 				</button>
 
 		</table>
@@ -43,11 +41,16 @@
 	<labelframe text="Tools offset">
 		<table>
 			<tablerow/>
+				<number>
+					<halpin>"z-coord.in"</halpin>
+					<font>("Helvetica",24)</font>
+					<format>"+3.4f"</format>
+				</number>
 				<led>
 					<halpin>"probe-sensor-led.in"</halpin>
 					<size>50</size>
 					<on_color>"green"</on_color>
-					<off_color>"gray"</off_color>
+					<off_color>"grey"</off_color>
 				</led>
 					<label>
 					    <text>"()"</text>
@@ -56,29 +59,35 @@
 			<tablerow/>
 				<bar>
 					<halpin>"move-speed.in"</halpin>
-					<max_>2.0</max_>
+					<max_>0.1</max_>
+					<format>"+4.4f"</format>
 				</bar>
 				<radiobutton>
-					<choices>["disabled","hight","midle","low"]</choices>
-					<halpin>"my-radio"</halpin>
+					<choices>["disabled","hight","midle","low","auto"]</choices>
+					<halpin>"probe_sensor_voltage"</halpin>
+					<initval>0</initval>
+				</radiobutton>
+				<radiobutton>
+					<choices>["disabled","height","toolseter"]</choices>
+					<halpin>"probe_sensor_select"</halpin>
 					<initval>0</initval>
 				</radiobutton>
 			<tablerow/>
 
 				<button>
-					<halpin>"axis-z.change_offset-4.0.out"</halpin>
+					<halpin>"axis-z.change_g54_offset-4.0.out"</halpin>
 					<text>"Z = -4.0"</text> 
 				</button>
 				<button>
-					<halpin>"axis-z.change_offset-2.0.out"</halpin>
+					<halpin>"axis-z.change_g54_offset-2.0.out"</halpin>
 					<text>"Z = -2.0"</text> 
 				</button>
 				<button>
-					<halpin>"axis-z.change_offset-1.4..out"</halpin>
+					<halpin>"axis-z.change_g54_offset-1.4.out"</halpin>
 					<text>"Z = -1.4"</text> 
 				</button>
 				<button>
-					<halpin>"axis-z.change_offset-0.0.out"</halpin>
+					<halpin>"axis-z.change_g54_offset-0.0.v2.out"</halpin>
 					<text>"Z = 0.0"</text> 
 				</button>
 		</table>
@@ -89,6 +98,10 @@
 	</labelframe>
 				
 	<labelframe text="Tools offset">
+					<button>
+						<halpin>"toolsensor.move.out"</halpin>
+						<text>"Tool sensor move"</text> 
+					</button>
 
 					<label>
 					    <text>"(G10 L1;G10 L10;G10 L11;\nG41.xG42.x-G40;G43.x-G49;G38.x)"</text>
