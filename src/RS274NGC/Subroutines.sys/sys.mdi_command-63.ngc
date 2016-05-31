@@ -1,0 +1,5 @@
+O<sys.mdi_command-63> sub
+(PRINT, call <sys.mdi_command-63>)
+O<sys.init_probe_lenght> call
+O<sys.mdi_command-63> endsub
+M02

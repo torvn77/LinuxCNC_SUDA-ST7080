@@ -1,0 +1,5 @@
+O<sys.mdi_command-60> sub
+(PRINT, call <sys.mdi_command-60>)
+O<sys.matheight_abs>
+O<sys.mdi_command-60> endsub
+M02
