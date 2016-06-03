@@ -25,3 +25,7 @@ git add .
 git commit -m "test commit" <br>
 git push <br>
 exit <br>
+
+В папке https://github.com/torvn77/LinuxCNC_SUDA-ST7080/tree/master/src/Devices/Primary есть симлинк Select
+для выбора используемого устройства.
+Он не всегда копируется правильно и если linuxcnc не может найти файлы в папке Devices/Primary то вам надо будет его поправить.
