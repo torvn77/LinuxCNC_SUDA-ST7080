@@ -15,6 +15,7 @@ setp   hm2_5i25.0.stepgen.04.control-type    $::AMPLIFIER_04(CONTROL_TYPE)
 setp   hm2_5i25.0.stepgen.04.maxaccel        $::AMPLIFIER_04(MAXACCEL)
 setp   hm2_5i25.0.stepgen.04.maxvel          $::AMPLIFIER_04(MAXVEL)
 
-net lcnc.04_amp-enable =>  hm2_5i25.0.stepgen.04.enable
-net lcnc.04_pos-cmd    =>  hm2_5i25.0.stepgen.04.position-cmd
-net lcnc.04_pos-fb     <=  hm2_5i25.0.stepgen.04.position-fb
+net lcnc.axis-04.amp-enable       =>  hm2_5i25.0.stepgen.04.enable
+net lcnc.axis-04.motor-pos-cmd    =>  hm2_5i25.0.stepgen.04.position-cmd
+net lcnc.axis-04.motor-pos-fb     <=  hm2_5i25.0.stepgen.04.position-fb
+

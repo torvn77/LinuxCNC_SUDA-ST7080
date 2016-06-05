@@ -44,8 +44,8 @@ addf and2.24 servo-thread
 addf and2.25 servo-thread
 
 #---------------------------
-net gamepad_analog_jog-enable   => mux4.0.sel0
-net gamepad_continue_jog-enable => mux4.0.sel1
+net gamepad.analog_jog-enable   => mux4.0.sel0
+net gamepad.continue_jog-enable => mux4.0.sel1
 # Скорость если кнопки вывода режима не нажаты,равна нулю для блокировки случайного перемещения перемещения
 # на тот случай если джойстик или на джойстик что-то упало(0.0). 
 setp mux4.0.in0 0.0
@@ -57,7 +57,7 @@ setp mux4.0.in2 70.0
 # С чего бы это быть обоим кнопкам нажатыми,случаем джойстик у вас не упал и вы на него ничего не положили?
 # В общем заблокировать (0.0)
 setp mux4.0.in3 0.0
-net gamepad_jog-speed <= mux4.0.out
+net gamepad.jog-speed <= mux4.0.out
 #---------------------------
 
 #-------Подключение модулей

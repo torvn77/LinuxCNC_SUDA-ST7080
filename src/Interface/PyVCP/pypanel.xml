@@ -42,7 +42,7 @@
 		<table>
 			<tablerow/>
 				<number>
-					<halpin>"z-coord.in"</halpin>
+					<halpin>"axis-z.coarse-pos-cmd.in"</halpin>
 					<font>("Helvetica",24)</font>
 					<format>"+3.4f"</format>
 				</number>

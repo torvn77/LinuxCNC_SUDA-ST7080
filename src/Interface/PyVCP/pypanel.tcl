@@ -14,9 +14,9 @@ net panel.1.measumerent_material_height     <= pyvcp.measumerent_material_height
 net panel.1.init_tool_lenght                <= pyvcp.init_tool_lenght.out
 net panel.1.measumerent_tool_lenght         <= pyvcp.measumerent_tool_lenght.out
 
-net gpio_raw.probe-in => pyvcp.probe-sensor-led.in
-net lcnc.02_pos-fb    => pyvcp.z-coord.in
-net lcnc.motion.current-vel                      => pyvcp.move-speed.in
+net gpio_raw.probe-in            => pyvcp.probe-sensor-led.in
+net lcnc.axis-02.coarse-pos-cmd  => pyvcp.axis-z.coarse-pos-cmd.in
+net lcnc.motion.current-vel      => pyvcp.move-speed.in
 
 
 net panel.1.probe_sensor_select.disabled    <= pyvcp.probe_sensor_select.disabled

@@ -5,7 +5,11 @@
 
 unlinkp iocontrol.0.user-enable-out
 unlinkp iocontrol.0.emc-enable-in
-net loopback.linuxcnc.estop iocontrol.0.user-enable-out =>  iocontrol.0.emc-enable-in
+net loopback.lcnc.estop      <= iocontrol.0.user-enable-out =>  iocontrol.0.emc-enable-in
+
+unlinkp motion.spindle-speed-out
+unlinkp motion.spindle-speed-in
+net loopback.lcnc.spindle.fb <= motion.spindle-speed-out    => motion.spindle-speed-in
 
 net gpio_raw.probe-in          => motion.probe-input
 
