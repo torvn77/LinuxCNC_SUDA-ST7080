@@ -15,10 +15,14 @@
 					<halpin>"axis-x.change_g54_offset-0.0.out"</halpin>
 					<text>"Rel X = 0"</text> 
 				</button>
-
 			<tablerow/>
 				<button>
-					<halpin>"axis-xy.move_g54_rel_null.out"</halpin>
+					<halpin>"axis-xy.move_g53_null.out"</halpin>
+					<text>"XY move >> abs 0"</text> 
+				</button>
+			<tablerow/>
+				<button>
+					<halpin>"axis-xy.move_g54_null.out"</halpin>
 					<text>"XY move >> rel 0"</text> 
 				</button>
 				<button>

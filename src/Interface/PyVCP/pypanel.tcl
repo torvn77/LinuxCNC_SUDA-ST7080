@@ -7,9 +7,11 @@ net panel.1.axis-z.change_g54_offset-2.0    <= pyvcp.axis-z.change_g54_offset-2.
 net panel.1.axis-z.change_g54_offset-4.0    <= pyvcp.axis-z.change_g54_offset-4.0.out
 net panel.1.axis-xyz.zeroed_g54_offset      <= pyvcp.axis-xyz.zeroed_g54_offset.out
 
-net panel.1.toolsensor.move                 <= pyvcp.toolsensor.move.out
-net panel.1.axis-xy.move_g54_rel_null       <= pyvcp.axis-xy.move_g54_rel_null.out
+net panel.1.axis-xy.move_g53_null           <= pyvcp.axis-xy.move_g53_null.out
+net panel.1.axis-xy.move_g54_null           <= pyvcp.axis-xy.move_g54_null.out
 net panel.1.machine.parking.move            <= pyvcp.machine.parking.move.out
+net panel.1.toolsensor.move                 <= pyvcp.toolsensor.move.out
+
 net panel.1.measumerent_material_height     <= pyvcp.measumerent_material_height.out
 net panel.1.init_tool_lenght                <= pyvcp.init_tool_lenght.out
 net panel.1.measumerent_tool_lenght         <= pyvcp.measumerent_tool_lenght.out

@@ -1,5 +1,8 @@
 O<sys.mdi_command-01> sub
 (PRINT, call <sys.mdi_command-01>)
-G10 L20 P1 Y0
+(panel.1.axis-xy.move_g54_rel_null)
+(DEBUG,<_z> = #<_z>)
+G53 G00 Z0
+G00 X0Y0
 O<sys.mdi_command-01> endsub
 M02
