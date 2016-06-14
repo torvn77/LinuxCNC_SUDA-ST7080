@@ -44,13 +44,13 @@ FORMAT = [ZH|@||1.2]
 ;
 FILE_EXTENSION = "ngc"
 ;
-; Ограничение минимального размера дуги прямо пропорционально скорости движения и обратно пропорционально величине BASE_PERIOD
+; ГЋГЈГ°Г Г­ГЁГ·ГҐГ­ГЁГҐ Г¬ГЁГ­ГЁГ¬Г Г«ГјГ­Г®ГЈГ® Г°Г Г§Г¬ГҐГ°Г  Г¤ГіГЈГЁ ГЇГ°ГїГ¬Г® ГЇГ°Г®ГЇГ®Г°Г¶ГЁГ®Г­Г Г«ГјГ­Г® Г±ГЄГ®Г°Г®Г±ГІГЁ Г¤ГўГЁГ¦ГҐГ­ГЁГї ГЁ Г®ГЎГ°Г ГІГ­Г® ГЇГ°Г®ГЇГ®Г°Г¶ГЁГ®Г­Г Г«ГјГ­Г® ГўГҐГ«ГЁГ·ГЁГ­ГҐ BASE_PERIOD
 MIN_ARC_LENGTH=0.05
 ;
 UNITS = MM
 ;
 START = "(Path to save directory: [FILEDIRECTORY])"
-START = "(File name: [FILENAME].[FILEEXTENSION])"
+START = "(File name: [FILENAME][FILEEXTENSION])"
 START = " "
 START = "(Tool Description:[TOOLDESC])"
 START = " "
@@ -101,13 +101,13 @@ START = "#<_nc_home-z> = [ZH]"
 START = " "
 START = " "
 START = "(This logical and matematical constants)"
-START = "#<_unset>[9]= 0"
-START = "#<_null>[9]=0"
+START = "#<_unset>[9]=  0"
+START = "#<_null>[9]=  0"
 START = "#<_error>[9]= -1"
-START = "#<_true>[9]= 1"
-START = "#<_false>[9]= 0"
-START = "#<_yes>[9]= #<_true>"
-START = "#<_no>[9]= #<_false>"
+START = "#<_true>[9]=  1"
+START = "#<_false>[9]=  0"
+START = "#<_yes>[9][9]= #<_true>"
+START = "#<_no>[9][9]= #<_false>"
 START = " "
 START = " "
 START = "G17 G21 G40 G49 G54 G90 G91.1 G92.1 G94 F0"
