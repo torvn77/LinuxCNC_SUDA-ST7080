@@ -1,0 +1,12 @@
+O<sys.init_machine> sub
+//(DEBUG, Calling "sys.init_machine" functiopn)
+F0 S0 M05 M09 G17 G21 G40 G49 G54 G64 P0.015 G80 G90 G91.1 G92.2 G94 G97 G98
+G8 M48 G99
+M52 P1
+M53 P1
+//(DEBUG, current_tool = #<_current_tool> selected_tool = #<_selected_tool> )
+//T1M6
+//(DEBUG, current_tool = #<_current_tool> selected_tool = #<_selected_tool> )
+M0
+O<sys.init_machine> endsub
+M02

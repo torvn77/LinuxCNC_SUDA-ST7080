@@ -1,1 +1,1 @@
-source Interface/PyVCP/pypanel.tcl
+source Interfaces/PyVCP/pypanel.tcl
