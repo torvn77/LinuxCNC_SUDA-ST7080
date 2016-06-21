@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<interface>
+  <requires lib="gtk+" version="2.16"/>
+  <!-- interface-naming-policy project-wide -->
+  <object class="GtkWindow" id="window1">
+    <signal name="destroy" handler="on_destroy"/>
+    <signal name="expose_event" handler="on_expose"/>
+    <property name="default_width">200</property>
+    <property name="default_height">150</property>
+    
+    
+    <child>
+      <object class="GtkVBox" id="vbox1">
+        <property name="visible">True</property>
+        <property name="spacing">2</property>
+    <child>
+      <object class="GtkButton" id="button1">
+        <property name="label" translatable="yes">Who are you?</property>
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="related_action">hal_action_mdi1</property>
+      </object>
+    </child>
+      </object>
+    </child>
+    
+    
+  </object>
+  <object class="GtkListStore" id="liststore1">
+    <columns>
+      <!-- column-name myfloat -->
+      <column type="gfloat"/>
+      <!-- column-name description -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0">3.1400001049041748</col>
+        <col id="1" translatable="yes">Pi </col>
+      </row>
+      <row>
+        <col id="0">2.7182817459106445</col>
+        <col id="1" translatable="yes">e</col>
+      </row>
+      <row>
+        <col id="0">42</col>
+        <col id="1" translatable="yes">The Answer</col>
+      </row>
+    </data>
+  </object>
+  <object class="EMC_Action_MDI" id="hal_action_mdi1">
+    <property name="command">(MSG, "Hi, I'm an EMC_Action_MDI")</property>
+  </object>
+  <object class="GtkAction" id="action1"/>
+  <object class="GtkAdjustment" id="adjustment1">
+    <property name="lower">-100</property>
+    <property name="page_increment">10</property>
+    <property name="page_size">10</property>
+    <property name="step_increment">0.10000000000000001</property>
+    <property name="upper">100</property>
+    <property name="value">42</property>
+  </object>
+  <object class="GtkAdjustment" id="adjustment2">
+    <property name="page_increment">10</property>
+    <property name="page_size">10</property>
+    <property name="upper">100</property>
+    <property name="step_increment">1</property>
+  </object>
+</interface>
