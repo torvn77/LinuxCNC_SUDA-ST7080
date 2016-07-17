@@ -10,6 +10,8 @@ halrun -U
 linuxcnc SUDA-ST8070.5i25-7i76.ini
 
 halrun -U
+
+echo 'Pause !!!!!'
 read 
 exit
 

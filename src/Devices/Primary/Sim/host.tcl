@@ -1,8 +1,11 @@
 #
 loadrt stepgen step_type=0,0,0
-addf stepgen.make-pulses base-thread
+#$::AMPLIFIER_00(STEP_TYPE),::AMPLIFIER_01(STEP_TYPE),::AMPLIFIER_02(STEP_TYPE)
+#addf stepgen.make-pulses base-thread
 addf stepgen.update-freq servo-thread
 addf stepgen.capture-position servo-thread
+#setp  
+#setp  $::AMPLIFIER_00(CONTROL_TYPE)
 
 
 #loadrt sim_parport names=parport.0

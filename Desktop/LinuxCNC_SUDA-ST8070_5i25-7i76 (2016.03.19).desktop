@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+#true;false
+Terminal=true
+#
+Name=LinuxCNC\nSUDA-ST8070\n5i25-7i76\n(github.com)
+Exec="/usr/bin/linuxcnc 'Git/LinuxCNC_SUDA-ST7080/src/SUDA-ST8070.5i25-7i76.ini'"
+Type=Application
+Comment=
+Icon=/usr/share/linuxcnc/linuxcncicon.png

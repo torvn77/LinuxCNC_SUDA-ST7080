@@ -2,27 +2,27 @@
 loadrt sim_axis_hardware names=sim-limits
 addf sim-limits.update servo-thread
 
-net lcnc.x_joint-pos-fb => sim-limits.Xcurrent-pos
-net lcnc.y_joint-pos-fb => sim-limits.Ycurrent-pos
-net lcnc.z_joint-pos-fb => sim-limits.Zcurrent-pos sim-limits.Acurrent-pos
-#net lcnc.a_joint-pos-fb => sim-limits.Acurrent-pos
+net lcnc.00.joint-pos-fb => sim-limits.Xcurrent-pos
+net lcnc.01.joint-pos-fb => sim-limits.Ycurrent-pos
+net lcnc.02.joint-pos-fb => sim-limits.Zcurrent-pos sim-limits.Acurrent-pos
+#net lcnc.03.joint-pos-fb => sim-limits.Acurrent-pos
 
-setp sim-limits.Xmaxsw-upper 701.5
+setp sim-limits.Xmaxsw-upper 702.0
 setp sim-limits.Xmaxsw-lower $::AXIS_0(MAX_LIMIT)
 setp sim-limits.Xminsw-upper $::AXIS_0(MIN_LIMIT)
-setp sim-limits.Xminsw-lower -1.5
+setp sim-limits.Xminsw-lower -2.0
 setp sim-limits.Xhomesw-pos $::AXIS_0(HOME_OFFSET)
 
-setp sim-limits.Ymaxsw-upper 801.5
+setp sim-limits.Ymaxsw-upper 802.0
 setp sim-limits.Ymaxsw-lower $::AXIS_1(MAX_LIMIT)
 setp sim-limits.Yminsw-upper $::AXIS_1(MIN_LIMIT)
-setp sim-limits.Yminsw-lower -1.5
+setp sim-limits.Yminsw-lower -2.0
 setp sim-limits.Yhomesw-pos $::AXIS_1(HOME_OFFSET)
 
-setp sim-limits.Zmaxsw-upper 1.5
+setp sim-limits.Zmaxsw-upper 2.0
 setp sim-limits.Zmaxsw-lower $::AXIS_2(MAX_LIMIT)
 setp sim-limits.Zminsw-upper $::AXIS_2(MIN_LIMIT)
-setp sim-limits.Zminsw-lower -121.5
+setp sim-limits.Zminsw-lower -115.0
 setp sim-limits.Zhomesw-pos $::AXIS_2(HOME_OFFSET)
 
 #setp sim-limits.Amaxsw-upper 10000
@@ -62,7 +62,7 @@ net gpio_raw.probe-in sim-limits.Aminsw-out
 #net hw.x_sw_lim-both            sim-limits.Xbothsw-out
 #net hw.x_sw_home            sim-limits.Xhomesw-out
 #net hw.x_sw_home_lim-max        sim-limits.Xmaxsw-homesw-out
-net raw_gpio.x_sw_home_lim-min        sim-limits.Xminsw-homesw-out
+net gpio_raw.00_sw_home_lim-min        sim-limits.Xminsw-homesw-out
 #net hw.x_sw_home_lim-both       sim-limits.Xbothsw-homesw-out
 
 #net hw.y_sw_lim-max             sim-limits.Ymaxsw-out
@@ -70,14 +70,14 @@ net raw_gpio.x_sw_home_lim-min        sim-limits.Xminsw-homesw-out
 #net hw.y_sw_lim-both            sim-limits.Ybothsw-out
 #net hw.y_sw_home            sim-limits.Yhomesw-out
 #net hw.y_sw_home_lim-max        sim-limits.Ymaxsw-homesw-out
-net raw_gpio.y_sw_home_lim-min        sim-limits.Yminsw-homesw-out
+net gpio_raw.01_sw_home_lim-min        sim-limits.Yminsw-homesw-out
 #net hw.y_sw_home_lim-both       sim-limits.Ybothsw-homesw-out
 
 #net hw.z_sw_lim-max             sim-limits.Zmaxsw-out
 #net hw.z_sw_lim-min             sim-limits.Zminsw-out
 #net hw.z_sw_lim-both            sim-limits.Zbothsw-out
 #net hw.z_sw_home            sim-limits.Zhomesw-out
-net raw_gpio.z_sw_home_lim-max        sim-limits.Zmaxsw-homesw-out
+net gpio_raw.02_sw_home_lim-max        sim-limits.Zmaxsw-homesw-out
 #net hw.z_sw_home_lim-min        sim-limits.Zminsw-homesw-out
 #net hw.z_sw_home_lim-both       sim-limits.Zbothsw-homesw-out
 
