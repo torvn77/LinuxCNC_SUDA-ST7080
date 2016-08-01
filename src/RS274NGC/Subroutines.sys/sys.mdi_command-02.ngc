@@ -1,7 +1,0 @@
-O<sys.mdi_command-02> sub
-(PRINT, call <sys.mdi_command-02>)
-(machine.parking.move.out)
-G53 G00 Z0
-G53 G00 X350Y800
-O<sys.mdi_command-02> endsub
-M02
