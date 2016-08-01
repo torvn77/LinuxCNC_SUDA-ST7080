@@ -31,3 +31,4 @@ net panel.1.probe_sensor_voltage.hight      <= pyvcp.probe_sensor_voltage.hight
 net panel.1.probe_sensor_voltage.low        <= pyvcp.probe_sensor_voltage.low
 net panel.1.probe_sensor_voltage.midle      <= pyvcp.probe_sensor_voltage.midle
 
+loadusr halshow

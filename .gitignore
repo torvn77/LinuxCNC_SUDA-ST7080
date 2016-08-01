@@ -1,4 +1,6 @@
 *.expanded
+.expanded
+autosave.halscope
 *~
 .ssh
 .ssh/*

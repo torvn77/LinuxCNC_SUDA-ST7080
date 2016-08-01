@@ -3,10 +3,12 @@
 # connect miscellaneous signals
 #******************************
 
-#unlinkp iocontrol.0.user-enable-out
-#unlinkp iocontrol.0.emc-enable-in
-#net loopback.lcnc.estop      <= iocontrol.0.user-enable-out =>  iocontrol.0.emc-enable-in
-net loopback.estop motion.motion-enabled motion.enable
+unlinkp iocontrol.0.user-enable-out
+unlinkp iocontrol.0.emc-enable-in
+net loopback.lcnc.estop <= iocontrol.0.user-enable-out
+net loopback.lcnc.estop =>  iocontrol.0.emc-enable-in
+#net loopback.estop motion.motion-enabled motion.enable
+
 
 
 
