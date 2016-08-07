@@ -1,0 +1,9 @@
+O<g03_int> sub
+	O<g03_if1> if [[#<_z> LE #<_z_min>] AND [#3 LE #<_z_min>]]
+		F#<_curve_feed> S#<_curve_shpindle_speed>
+	O<g03_if1> else
+		F#<_if_z_move_curve_feed> S#<_if_z_move_curve_shpindle_speed>
+	O<g03_if1> endif
+	G03 X#1 Y#2 Z#3 I#4 J#5
+	F0
+O<g03_int> endsub

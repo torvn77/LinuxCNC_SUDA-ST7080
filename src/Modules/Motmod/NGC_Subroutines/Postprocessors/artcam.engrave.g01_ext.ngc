@@ -1,0 +1,9 @@
+O<g01_int> sub
+	O<g01_if1> if [[#<_z> LE #<_z_min>] AND [#3 LE #<_z_min>]]
+		F#<_line_feed> S#<_line_shpindle_speed>
+	O<g01_if1> else
+		F#<_if_z_move_line_feed> S#<_if_z_move_line_shpindle_speed>
+	O<g01_if1> endif
+	G01 X#1 Y#2 Z#3
+	F0
+O<g01_int> endsub

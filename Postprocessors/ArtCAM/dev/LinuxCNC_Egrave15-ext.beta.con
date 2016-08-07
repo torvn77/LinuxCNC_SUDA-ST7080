@@ -1,0 +1,165 @@
+;Win CP1251
+; G - Code configuration file 
+;
+; History
+;
+; Who                           When      What
+; ===                           ========  ========================================
+; torvn77@mail.ru               19.12.15 Added LinuxCNC specific code
+;
+; Cariage return - line feed at end of each line
+;
+END_OF_LINE = "[10]"
+;
+; Block numbering 
+;
+LINE_NUM_START     = 0
+LINE_NUM_INCREMENT = 1
+LINE_NUM_MAXIMUM   = 9999999
+;
+; Set up default formating for variables
+;
+; Line numbering
+FORMAT = [N|@||1.0]
+; Tool number
+FORMAT = [T|@||1.0]
+; Spindle Speed
+FORMAT = [S|@||1.0]
+; Feed Rate
+FORMAT = [F|@||1.0]
+; Tool moves in x,y and z
+FORMAT = [X|@||1.4]
+FORMAT = [Y|@||1.4]
+FORMAT = [Z|@||1.4]
+;
+FORMAT = [I|@||1.8]
+FORMAT = [J|@||1.8]
+;
+FORMAT = [SZ|@||1.2]
+; Home tool positions 
+FORMAT = [XH|@||1.2]
+FORMAT = [YH|@||1.2]
+FORMAT = [ZH|@||1.2]
+;
+;
+FILE_EXTENSION = "ngc"
+;
+; Ограничение минимального размера дуги прямо пропорционально скорости движения и обратно пропорционально величине BASE_PERIOD
+MIN_ARC_LENGTH=0.05
+;
+UNITS = MM
+;
+START = "(This logical and matematical constants)"
+START = "#<_unset>[9]= 0"
+START = "#<_null>[9]= 0"
+START = "#<_error>[9]= -1"
+START = "#<_true>[9]= 1"
+START = "#<_false>[9]= 0"
+START = "#<_yes>[9]= #<_true>"
+START = "#<_no>[9]= #<_false>"
+START = " "
+START = " "
+
+START = "(File name: [FILENAME][FILEEXTENSION])"
+START = "(Tool Path Name:[TOOLPATHNAME])"
+START = " "
+START = "(Path to save directory: [FILEDIRECTORY])"
+START = " "
+START = "(Tool Description:[TOOLDESC])"
+START = " "
+START = "(Comment:[COMMENT])"
+;
+; Set up program header
+;
+START = " "
+START = " "
+START = "#<_safe_z> = [SZ]"
+START = " "
+START = "(Dont edit this below line)"
+START = "#<_z_min>  = #<_safe_z>"
+START = " "
+;
+DESCRIPTION = "LinuxCNC EndMill z_min= safe_z (*.ngc)"
+START = "#<_z_min>  = #<_safe_z>"
+;
+;DESCRIPTION = "LinuxCNC Engraver z_min=-1.4 (*.ngc)"
+;START = "(#<_z_min>  = -1.4)"
+;
+;DESCRIPTION = "LinuxCNC Engraver z_min=-2.0 (*.ngc)"
+;START = "(#<_z_min>  = -2.0)"
+;
+START = " "
+START = "#<_g64_tolerance-q> = 0.03"
+START = "#<_g64_tolerance-p> = 0.03"
+START = " "
+START = "#<_plunge_feed>           = [FP]"
+START = "#<_plunge_shpindle_speed> = [S]"
+START = " "
+START = "#<_line_feed>           = [FC]"
+START = "#<_line_shpindle_speed> = [S]"
+START = " "
+START = "#<_curve_feed>           = #<_line_feed>"
+START = "#<_curve_shpindle_speed> = #<_line_shpindle_speed>"
+START = " "
+START = "#<_if_z_move_line_feed>           = #<_plunge_feed>"
+START = "#<_if_z_move_line_shpindle_speed> = #<_plunge_shpindle_speed>"
+START = " "
+START = "#<_if_z_move_curve_feed>           = #<_plunge_feed>"
+START = "#<_if_z_move_curve_shpindle_speed> = #<_plunge_shpindle_speed>"
+START = " "
+START = "#<_nc_home-x> = [XH]"
+START = "#<_nc_home-y> = [YH]"
+START = "#<_nc_home-z> = [ZH]"
+START = " "
+START = " "
+START = "#<_measur-start-point-x> = [XH]"
+START = "#<_measur-start-point-y> = [YH]"
+START = "#<_measur-start-point-z> = [SZ]"
+START = "#<_measur-first-travel> = ABS[91][SZ][93]+0.1"
+START = "#<_measur-step> = 0.2"
+START = " "
+START = " "
+START = " "
+START = "G17 G21 G40 G49 G54 G90 G91.1 G92.1 G94 F0"
+START = "(request initialise nc environment)"
+START = "F#<_null>"
+START = "#<_nc_mode> = #<_false>"
+START = "#<_starting_nc_prog> = #<_true>"
+START = " "
+START = " "
+START = "(END_START) "
+START = " "
+START = " "
+
+;
+; Program moves
+;
+FIRST_RAPID_RATE_MOVE   = "(RpM)[10]O<artcam.engrave.rapid_ext> call [91][X][93] [91][Y][93] [91][Z][93]"
+RAPID_RATE_MOVE                  = "O<artcam.engrave.rapid_ext> call [91][X][93] [91][Y][93] [91][Z][93]"
+
+FIRST_PLUNGE_RATE_MOVE = "(PlM)[10]O<artcam.engrave.plunge_ext> call [91][X][93] [91][Y][93] [91][Z][93]"
+PLUNGE_RATE_MOVE                = "O<artcam.engrave.plunge_ext> call [91][X][93] [91][Y][93] [91][Z][93]"
+
+RETRACT_MOVE          = "(RtM)[10]O<artcam.engrave.retract_ext> call [91][X][93] [91][Y][93] [91][Z][93]"
+
+FIRST_FEED_RATE_MOVE      = "O<artcam.engrave.g01_ext> call [91][X][93] [91][Y][93] [91][Z][93]"
+FEED_RATE_MOVE            = "O<artcam.engrave.g01_ext> call [91][X][93] [91][Y][93] [91][Z][93]"
+
+FIRST_CW_ARC_MOVE         = "O<artcam.engrave.g02_ext> call [91][X][93] [91][Y][93] [91][Z][93] [91][I][93] [91][J][93]"
+CW_ARC_MOVE               = "O<artcam.engrave.g02_ext> call [91][X][93] [91][Y][93] [91][Z][93] [91][I][93] [91][J][93]"
+
+FIRST_CCW_ARC_MOVE        = "O<artcam.engrave.g03_ext> call [91][X][93] [91][Y][93] [91][Z][93] [91][I][93] [91][J][93]"
+CCW_ARC_MOVE              = "O<artcam.engrave.g03_ext> call [91][X][93] [91][Y][93] [91][Z][93] [91][I][93] [91][J][93]"
+;
+; End of file
+;
+END = ""
+END = ""
+END = "(SECTION END)"
+END = ""
+END = "M05 M09 F0 S0"
+END = "G04 P4"
+END = "G17 G21 G40 G49 G54 G90 G91.1 G92.1 G94"
+END = "G53 G0 Z[91]#<_ini[91]AXIS_2[93]MAX_LIMIT>-0.1[93]"
+END = "G53 G00 X50"
+END = "M02"
