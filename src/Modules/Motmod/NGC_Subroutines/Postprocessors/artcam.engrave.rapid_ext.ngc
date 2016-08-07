@@ -1,24 +1,26 @@
-O<rapid_int> sub
-	(PRINT,Calling <rapid_int> function with <_line> = #<_line>)
-	O<rapid_if1> if [[#<_z> NE #<_safe_z> ] OR [#<_nc_mode> NE #<_true>] OR [#<_feed> NE #<_null>]]
-		O<rapid_if2> if [#<_starting_nc_prog> EQ #<_true>]
+O<artcam.engrave.rapid_ext> sub
+	(PRINT,Calling <rapid_ext> function with <_line> = #<_line>)
+	O<artcam.engrave.rapid_if1> if [[#<_z> NE #<_safe_z> ] OR [#<_nc_mode> NE #<_true>] OR [#<_feed> NE #<_null>]]
+		O<artcam.engrave.rapid_if2> if [#<_starting_nc_prog> EQ #<_true>]
 			(PRINT,Normal start NC prog)
 			#<_starting_nc_prog> = #<_false>
-		O<rapid_if2> else
-			(DEBUG,<_line>[9]= #<_line>)
-			(DEBUG,<_nc_mode>[9]= #<_nc_mode>)
-			(DEBUG,<_z>[9]= #<_z>)
-			(DEBUG,<_safe_z>[9]= #<_safe_z>)
+		O<artcam.engrave.rapid_if2> else
+			(DEBUG,<_line>		= #<_line>)
+			(DEBUG,<_nc_mode>	= #<_nc_mode>)
+			(DEBUG,<_z>			= #<_z>)
+			(DEBUG,<_safe_z>	= #<_safe_z>)
 			(MSG,Incorect coordinates or unset or false <_nc_mode>, reconfigur NC environment)
-		O<rapid_if2> endif
+		O<artcam.engrave.rapid_if2> endif
 		G17 G21 G40 G49 G54 G90 G91.1 G92.1 G94 F0
 		G53 G0 Z[#<_ini[AXIS_2]MAX_LIMIT>-0.1]
-		[S|@|S] M3
+		S1500 M3
 		G04 P8
 		G0 X#<_nc_home-x> Y#<_nc_home-y>
 		G64 Q#<_g64_tolerance-q> P#<_g64_tolerance-p>
-	O<rapid_if1> endif
+	O<artcam.engrave.rapid_if1> endif
 	#<_nc_mode> = #<_false>
 	G00 X#1 Y#2
 	G00 Z#3
-O<rapid_int> endsub
+O<artcam.engrave.rapid_ext> endsub
+M02
+

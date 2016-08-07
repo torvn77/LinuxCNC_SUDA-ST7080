@@ -1,4 +1,4 @@
-O<g02_int> sub
+O<artcam.engrave.g02_ext> sub
 	O<g02_if1> if [[#<_z> LE #<_z_min>] AND [#3 LE #<_z_min>]]
 		F#<_curve_feed> S#<_curve_shpindle_speed>
 	O<g02_if1> else
@@ -6,4 +6,6 @@ O<g02_int> sub
 	O<g02_if1> endif
 	G02 X#1 Y#2 Z#3 I#4 J#5
 	F0
-O<g02_int> endsub
+O<artcam.engrave.g02_ext> endsub
+M02
+

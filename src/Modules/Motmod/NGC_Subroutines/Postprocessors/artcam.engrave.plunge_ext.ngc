@@ -1,6 +1,8 @@
-O<plunge_int> sub
-	(PRINT,Calling <plunge_int> function with <_line> = #<_line>)
+O<artcam.engrave.plunge_ext> sub
+	(PRINT,Calling <plunge_ext> function with <_line> = #<_line>)
 	F#<_plunge_feed> S#<_plunge_shpindle_speed>
 	G01 X#1 Y#2 Z#3
 	F0
-O<plunge_int> endsub
+O<artcam.engrave.plunge_ext> endsub
+M02
+

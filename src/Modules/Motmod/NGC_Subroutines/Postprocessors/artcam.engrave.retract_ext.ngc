@@ -1,6 +1,8 @@
-O<retract_int> sub
-	(PRINT,Calling <retract_int> function with <_line> = #<_line>)
+O<artcam.engrave.retract_ext> sub
+	(PRINT,Calling <retract_ext> function with <_line> = #<_line>)
 	F0
 	G00 Z#<_safe_z>
 	#<_nc_mode> = #<_true>
-O<retract_int> endsub
+O<artcam.engrave.retract_ext> endsub
+M02
+
