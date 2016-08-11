@@ -1,8 +1,10 @@
 O<artcam.engrave.plunge_ext> sub
-	(PRINT,Calling <plunge_ext> function with <_line> = #<_line>)
+(Calculate trajectory lenght)
+	#<_travel-plunge> = [SQRT[[#1-#<_x>]*[#1-#<_x>]+[#2-#<_y>]*[#2-#<_y>]+[#3-#<_z>]*[#3-#<_z>]]+#<_travel-plunge>]
+
+(Change Feed)
 	F#<_plunge_feed> S#<_plunge_shpindle_speed>
-	G01 X#1 Y#2 Z#3
-	F0
+	
 O<artcam.engrave.plunge_ext> endsub
 M02
 

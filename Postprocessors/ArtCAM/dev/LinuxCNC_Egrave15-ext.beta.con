@@ -137,19 +137,22 @@ START = " "
 FIRST_RAPID_RATE_MOVE   = "(RpM)[10]O<artcam.engrave.rapid_ext> call [91][X][93] [91][Y][93] [91][Z][93]"
 RAPID_RATE_MOVE                  = "O<artcam.engrave.rapid_ext> call [91][X][93] [91][Y][93] [91][Z][93]"
 
-FIRST_PLUNGE_RATE_MOVE = "(PlM)[10]O<artcam.engrave.plunge_ext> call [91][X][93] [91][Y][93] [91][Z][93]"
-PLUNGE_RATE_MOVE                = "O<artcam.engrave.plunge_ext> call [91][X][93] [91][Y][93] [91][Z][93]"
 
 RETRACT_MOVE          = "(RtM)[10]O<artcam.engrave.retract_ext> call [91][X][93] [91][Y][93] [91][Z][93]"
 
-FIRST_FEED_RATE_MOVE      = "O<artcam.engrave.g01_ext> call [91][X][93] [91][Y][93] [91][Z][93]"
-FEED_RATE_MOVE            = "O<artcam.engrave.g01_ext> call [91][X][93] [91][Y][93] [91][Z][93]"
+;-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-FIRST_CW_ARC_MOVE         = "O<artcam.engrave.g02_ext> call [91][X][93] [91][Y][93] [91][Z][93] [91][I][93] [91][J][93]"
-CW_ARC_MOVE               = "O<artcam.engrave.g02_ext> call [91][X][93] [91][Y][93] [91][Z][93] [91][I][93] [91][J][93]"
+FIRST_PLUNGE_RATE_MOVE = "(PlM)[10]O<artcam.engrave.plunge_ext> call [91][X][93] [91][Y][93] [91][Z][93][10]G01 [X|@|X] [Y|@|Y] [Z|@|Z]"
+PLUNGE_RATE_MOVE                = "O<artcam.engrave.plunge_ext> call [91][X][93] [91][Y][93] [91][Z][93][10]G01 [X|@|X] [Y|@|Y] [Z|@|Z]"
 
-FIRST_CCW_ARC_MOVE        = "O<artcam.engrave.g03_ext> call [91][X][93] [91][Y][93] [91][Z][93] [91][I][93] [91][J][93]"
-CCW_ARC_MOVE              = "O<artcam.engrave.g03_ext> call [91][X][93] [91][Y][93] [91][Z][93] [91][I][93] [91][J][93]"
+FIRST_FEED_RATE_MOVE               = "O<artcam.engrave.g01_ext> call [91][X][93] [91][Y][93] [91][Z][93][10]G01 [X|@|X] [Y|@|Y] [Z|@|Z]"
+FEED_RATE_MOVE                     = "O<artcam.engrave.g01_ext> call [91][X][93] [91][Y][93] [91][Z][93][10]G01 [X|@|X] [Y|@|Y] [Z|@|Z]"
+
+FIRST_CW_ARC_MOVE                  = "O<artcam.engrave.g02_ext> call [91][X][93] [91][Y][93] [91][Z][93] [91][I][93] [91][J][93][10]G02 [X|@|X] [Y|@|Y] [Z|@|Z] [I|@|I] [J|@|J]"
+CW_ARC_MOVE                        = "O<artcam.engrave.g02_ext> call [91][X][93] [91][Y][93] [91][Z][93] [91][I][93] [91][J][93][10]G02 [X|@|X] [Y|@|Y] [Z|@|Z] [I|@|I] [J|@|J]"
+
+FIRST_CCW_ARC_MOVE                 = "O<artcam.engrave.g03_ext> call [91][X][93] [91][Y][93] [91][Z][93] [91][I][93] [91][J][93][10]G02 [X|@|X] [Y|@|Y] [Z|@|Z] [I|@|I] [J|@|J]"
+CCW_ARC_MOVE                       = "O<artcam.engrave.g03_ext> call [91][X][93] [91][Y][93] [91][Z][93] [91][I][93] [91][J][93][10]G02 [X|@|X] [Y|@|Y] [Z|@|Z] [I|@|I] [J|@|J]"
 ;
 ; End of file
 ;

@@ -1,16 +1,17 @@
 O<artcam.engrave.rapid_ext> sub
-	(PRINT,Calling <rapid_ext> function with <_line> = #<_line>)
+	(PRIN T,Calling <rapid_ext> function with  <_calling-line> = ...)
+	
 	O<artcam.engrave.rapid_if1> if [[#<_z> NE #<_safe_z> ] OR [#<_nc_mode> NE #<_true>] OR [#<_feed> NE #<_null>]]
-		O<artcam.engrave.rapid_if2> if [#<_starting_nc_prog> EQ #<_true>]
+		O<artcam.engrave.rapid_if1_if2> if [#<_starting_nc_prog> EQ #<_true>]
 			(PRINT,Normal start NC prog)
 			#<_starting_nc_prog> = #<_false>
-		O<artcam.engrave.rapid_if2> else
+		O<artcam.engrave.rapid_if1_if2> else
 			(DEBUG,<_line>		= #<_line>)
 			(DEBUG,<_nc_mode>	= #<_nc_mode>)
 			(DEBUG,<_z>			= #<_z>)
 			(DEBUG,<_safe_z>	= #<_safe_z>)
 			(MSG,Incorect coordinates or unset or false <_nc_mode>, reconfigur NC environment)
-		O<artcam.engrave.rapid_if2> endif
+		O<artcam.engrave.rapid_if1_if2> endif
 		G17 G21 G40 G49 G54 G90 G91.1 G92.1 G94 F0
 		G53 G0 Z[#<_ini[AXIS_2]MAX_LIMIT>-0.1]
 		S1500 M3
@@ -18,9 +19,28 @@ O<artcam.engrave.rapid_ext> sub
 		G0 X#<_nc_home-x> Y#<_nc_home-y>
 		G64 Q#<_g64_tolerance-q> P#<_g64_tolerance-p>
 	O<artcam.engrave.rapid_if1> endif
+	
+	#<_travel-x> = [ABS[#2-#<_x>]+#<_travel-x>]
+	#<_travel-y> = [ABS[#3-#<_y>]+#<_travel-y>]
+	#<_travel-z> = [ABS[#4-#<_z>]+#<_travel-z>]
+	
+	#<_trajectory_count> = [#<_trajectory_count> + 1]
+	O<artcam.engrave.rapid_if2> if [ [ #<_trajectory_count> GE #<_trajectory_count_max> ] OR [ 0 GE 1 ]]
+	(DEBUG, IF2  = #<_trajectory_count>)
+		#<_trajectory_count> = 0 
+		O<sys.measurement_tool_lenght_ext> call 
+	O<artcam.engrave.rapid_if2> elseif [ #<_trajectory_count> EQ -1 ]
+		(O<measurement_tool_lenght.first_ext> call )
+(	O<artcam.engrave.rapid_if2> elseif [ [ #<_trajectory_count> GE #<_trajectory_count_max> ] OR [ 0 GE 1 ]])
+
+	O<artcam.engrave.rapid_if2> else
+	(MSG, O<artcam.engrave.rapid_if2> else)
+		
+	O<artcam.engrave.rapid_if2> endif
+	
 	#<_nc_mode> = #<_false>
-	G00 X#1 Y#2
-	G00 Z#3
+	G00 X#2 Y#3
+	G00 Z#4
 O<artcam.engrave.rapid_ext> endsub
 M02
 

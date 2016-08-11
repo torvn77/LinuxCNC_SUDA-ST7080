@@ -64,45 +64,66 @@ F#<_null>
 
 (END_START)
 #<_travel-all> = 0
+;
+#<_trajectory_count_max> = 2
+#<_trajectory_count> = -1
+
+
 
 O<artcam.engrave.rapid_ext>   call [#<_line>] [10] [30] [0]
 O<artcam.engrave.plunge_ext>  call [10] [30] [-5]
+G01 X10 Y30 Z-5
 O<artcam.engrave.g01_ext>     call [10] [40] [-5]
+G01 X10 Y40 Z-5
 O<artcam.engrave.retract_ext> call [10] [40] [0]
 
 O<artcam.engrave.rapid_ext>   call [#<_line>] [10] [50] [0]
 O<artcam.engrave.plunge_ext>  call [10] [50] [-5]
+G01 X10 Y50 Z-5
 O<artcam.engrave.g02_ext>     call [20] [60] [-5] [10] [0]
+G02 X20 Y60 Z-5 I10 J0
 O<artcam.engrave.retract_ext> call [20] [60] [0]
 
 O<artcam.engrave.rapid_ext>   call [#<_line>] [30] [60] [0]
 O<artcam.engrave.plunge_ext>  call [30] [60] [-5]
+G01 X30 Y60 Z-5
 O<artcam.engrave.g01_ext>     call [40] [60] [-5]
+G01 X40 Y60 Z-5
 O<artcam.engrave.retract_ext> call [40] [60] [0]
 
 O<artcam.engrave.rapid_ext>   call [#<_line>] [50] [60] [0]
 O<artcam.engrave.plunge_ext>  call [50] [60] [-5]
+G01 X50 Y60 Z-5
 O<artcam.engrave.g02_ext>     call [60] [50] [-5] [0] [-10]
+G02 X60 Y50 Z-5 I0 J-10
 O<artcam.engrave.retract_ext> call [60] [50] [0]
 
 O<artcam.engrave.rapid_ext>   call [#<_line>] [60] [40] [0]
 O<artcam.engrave.plunge_ext>  call [60] [40] [-5]
+G01 X60 Y 40 Z-5
 O<artcam.engrave.g01_ext>     call [60] [30] [-5]
+G01 X60 Y30 Z-5
 O<artcam.engrave.retract_ext> call [60] [30] [0]
 
 O<artcam.engrave.rapid_ext>   call [#<_line>] [60] [20] [0]
 O<artcam.engrave.plunge_ext>  call [60] [20] [-5]
+G01 X60 Y 20 Z-5
 O<artcam.engrave.g02_ext>     call [50] [10] [-5] [-10] [0]
+G02 X50 Y10 Z-5 I-10 J0
 O<artcam.engrave.retract_ext> call [50] [10] [0]
 
 O<artcam.engrave.rapid_ext>   call [#<_line>] [40] [10] [0]
 O<artcam.engrave.plunge_ext>  call [40] [10] [-5]
+G01 X40 Y10 Z-5
 O<artcam.engrave.g01_ext>     call [30] [10] [-5]
+G01 X30 Y10 Z-5
 O<artcam.engrave.retract_ext> call [30] [10] [0]
 
 O<artcam.engrave.rapid_ext>   call [#<_line>] [20] [10] [0]
 O<artcam.engrave.plunge_ext>  call [20] [10] [-5]
+G01 X20 Y10 Z-5
 O<artcam.engrave.g02_ext>     call [10] [20] [-5] [0] [10]
+G02 X10 Y 20 Z-5 I0 J10
 O<artcam.engrave.retract_ext> call [10] [20] [0]
 M02
 

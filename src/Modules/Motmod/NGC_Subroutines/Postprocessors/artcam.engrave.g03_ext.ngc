@@ -1,11 +1,14 @@
 O<artcam.engrave.g03_ext> sub
+(Calculate trajectory lenght)
+	#< _travel-cut> = [SQRT[[#1-#<_x>]*[#1-#<_x>]+[#2-#<_y>]*[#2-#<_y>]+[#3-#<_z>]*[#3-#<_z>]]+#< _travel-cut>]
+
+(Change Feed)
 	O<g03_if1> if [[#<_z> LE #<_z_min>] AND [#3 LE #<_z_min>]]
 		F#<_curve_feed> S#<_curve_shpindle_speed>
 	O<g03_if1> else
 		F#<_if_z_move_curve_feed> S#<_if_z_move_curve_shpindle_speed>
 	O<g03_if1> endif
-	G03 X#1 Y#2 Z#3 I#4 J#5
-	F0
+
 O<artcam.engrave.g03_ext> endsub
 M02
 
