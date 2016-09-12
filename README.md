@@ -16,6 +16,7 @@ http://www.opennet.ru/tips/info/2179.shtml <br>
 http://habrahabr.ru/company/mailru/blog/267595/ <br>
 Хоорошая документация по Git:
 http://git-scm.com/docs
+https://githowto.com/ru
 
 ssh-keygen -t rsa -C "torvn77@github.com" <br>
 git clone git@github.com:torvn77/LinuxCNC_SUDA-ST7080.git Git/test <br>
