@@ -14,9 +14,9 @@ git pull git://github.com/torvn77/LinuxCNC_Dcs_M4.git <br>
 Краткая справка по командам git <br>
 http://www.opennet.ru/tips/info/2179.shtml <br>
 http://habrahabr.ru/company/mailru/blog/267595/ <br>
-Хоорошая документация по Git:
-http://git-scm.com/docs
-https://githowto.com/ru
+Хоорошая документация по Git: <br>
+http://git-scm.com/docs <br>
+https://githowto.com/ru <br>
 
 ssh-keygen -t rsa -C "torvn77@github.com" <br>
 git clone git@github.com:torvn77/LinuxCNC_SUDA-ST7080.git Git/test <br>
