@@ -1,0 +1,46 @@
+#setp halui.jog-speed 8192.0
+net gamepad.jog-speed => halui.jog-speed
+setp halui.jog-deadband 0.000
+#----------Function Buttons "analog" mode------
+#net gamepad.func_button_1-analog-mode   => halui.mdi-command-00
+#net gamepad.func_button_2-analog-mode   => halui.mdi-command-01
+#net gamepad.func_button_3-analog-mode   => halui.mdi-command-02
+#net gamepad.func_button_4-analog-mode   => halui.mdi-command-03
+#net gamepad.func_button_5-analog-mode   => 
+#net gamepad.func_button_7-analog-mode   => 
+#net gamepad.func_button_9-analog-mode   => 
+#net gamepad.func_button_10-analog-mode   => 
+#net gamepad.func_button_11-analog-mode   => 
+#net gamepad.func_button_12-analog-mode   => 
+# Кнопки используются для выбора режима!
+#net gamepad.func_button_6-analog-mode   => 
+#net gamepad.func_button_8-analog-mode   => 
+#----------Function Buttons "continue" mode------
+net gamepad.func_button_1-continue_mode => halui.program.pause
+net gamepad.func_button_2-continue_mode => halui.program.step
+#net gamepad.func_button_3-continue_mode => 
+net gamepad.func_button_4-continue_mode => halui.program.resume
+#net gamepad.func_button_5-continue_mode => 
+#net gamepad.func_button_7-continue_mode => 
+#net gamepad.func_button_9-continue_mode => 
+#net gamepad.func_button_10-continue_mode => 
+#net gamepad.func_button_11-continue_mode => 
+#net gamepad.func_button_12-continue_mode => 
+# Кнопки используются для выбора режима!
+#net gamepad.func_button_6-continue_mode => 
+#net gamepad.func_button_8-continue_mode => 
+#----------Analog Jog Buttons------
+
+net  gamepad.analog_jog_vel-0 => halui.jog.0.analog
+net  gamepad.analog_jog_vel-1 => halui.jog.1.analog
+#Оси Z(2) и A(3) перекинуты в соответствии с их местом на джойстике
+net  gamepad.analog_jog_vel-3 => halui.jog.2.analog
+#net  gamepad.analog_jog_vel-2 => halui.jog.3.analog
+
+
+#------------Continue Jog Buttons---------
+net gamepad.continue_jog-x_plus  => halui.jog.0.plus
+net gamepad.continue_jog-x_minus => halui.jog.0.minus
+# Ось Y инвертирована
+net gamepad.continue_jog-y_minus => halui.jog.1.plus
+net gamepad.continue_jog-y_plus  => halui.jog.1.minus
