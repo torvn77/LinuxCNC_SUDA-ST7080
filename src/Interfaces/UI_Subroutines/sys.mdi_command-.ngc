@@ -1,0 +1,4 @@
+O<sys.mdi_command-> sub
+(MSG, call <sys.mdi_command->)
+O<sys.mdi_command-> endsub
+M02
