@@ -1,0 +1,8 @@
+O<ui.move_to_rel_zeropoint> sub
+(MSG, ui.move_to_rel_zeropoint)
+#<z> = #<_z>
+G53 G0 Z0
+G0 X0 Y0
+G0 Z#<z>
+O<ui.move_to_rel_zeropoint> endsub
+M02

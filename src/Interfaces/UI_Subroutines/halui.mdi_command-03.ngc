@@ -1,0 +1,7 @@
+O<sys.mdi_command-03> sub
+(PRINT, call <sys.mdi_command-03>)
+(panel.1.toolsensor.move)
+G53 G00 Z0
+G53 G00 X50Y350
+O<sys.mdi_command-03> endsub
+M02

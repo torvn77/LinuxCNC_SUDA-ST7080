@@ -7,8 +7,9 @@ cd "$thisdir"
 # 
 halrun -U
 if [ -e SUDA-ST8070.5i25-7i76.ini.expanded ]; then rm SUDA-ST8070.5i25-7i76.ini.expanded; fi ;
+if [ ! -e "/tmp/LinuxCNC" ]; then mkdir -p --mode=775 "/tmp/LinuxCNC"; fi;
 
-disabled=0
+disabled=1
 if [ "$disabled" -eq 1 ] ;
 	then echo -n;
 	elif [ ! -e "/tmp/LinuxCNC" ]; 
@@ -22,7 +23,7 @@ if [ "$disabled" -eq 1 ] ;
 fi;
 
 #mate-terminal --geometry=150x65+800+28 --command 'linuxcnc SUDA-ST8070.5i25-7i76.ini'
-linuxcnc SUDA-ST8070.5i25-7i76.ini
+taskset 02 linuxcnc SUDA-ST8070.5i25-7i76.ini
 
 halrun -U
 
@@ -30,4 +31,4 @@ halrun -U
 #echo 'Pause !!!!!'
 #read 
 exit
-
+# update 14-09

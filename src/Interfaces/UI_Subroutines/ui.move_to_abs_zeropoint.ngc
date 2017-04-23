@@ -1,0 +1,6 @@
+O<ui.move_to_abs_zeropoint> sub
+(MSG, ui.move_to_abs_zeropoint)
+G53 G0 Z0
+G53 G0 X0Y0
+O<ui.move_to_abs_zeropoint> endsub
+M02

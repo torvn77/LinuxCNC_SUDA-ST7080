@@ -1,67 +1,94 @@
 <?xml version="1.0"?>
 <interface>
   <!-- interface-requires gladevcp 0.0 -->
-  <requires lib="gtk+" version="2.16"/>
+  <!--requires lib="gtk+" version="2.16"/-->
   <!-- interface-naming-policy project-wide -->
   <object class="GtkWindow" id="window1">
     <child>
       <object class="GtkVBox" id="vbox1">
         <property name="visible">True</property>
         <child>
-          <object class="HAL_SpinButton" id="spin">
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="invisible_char">&#x25CF;</property>
-            <property name="adjustment">adjustment2</property>
-          </object>
-          <packing>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="HAL_CheckButton" id="check">
-            <property name="label" translatable="yes">checkbutton</property>
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">False</property>
-            <property name="draw_indicator">True</property>
-          </object>
-          <packing>
-            <property name="position">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="HAL_ToggleButton" id="toggle">
-            <property name="label" translatable="yes">togglebutton</property>
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-          </object>
-          <packing>
-            <property name="position">2</property>
-          </packing>
-        </child>
-        <child>
-          <object class="HAL_HScale" id="scale">
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="adjustment">adjustment1</property>
-          </object>
-          <packing>
-            <property name="position">3</property>
-          </packing>
-        </child>
-        <child>
           <object class="HAL_Button" id="hal_button1">
-            <property name="label" translatable="yes">run O-word
-     sub</property>
+            <property name="label" translatable="yes">Measumering Material Height</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
             <property name="related_action">hal_action_mdi1</property>
           </object>
           <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="HAL_Button" id="hal_button2">
+            <property name="label" translatable="yes">Zeroed X</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="related_action">hal_action_mdi2</property>
+          </object>
+          <packing>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="HAL_Button" id="hal_button3">
+            <property name="label" translatable="yes">Zeroed Y</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="related_action">hal_action_mdi3</property>
+          </object>
+          <packing>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="HAL_Button" id="hal_button4">
+            <property name="label" translatable="yes">Zeroed Z</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="related_action">hal_action_mdi4</property>
+          </object>
+          <packing>
             <property name="position">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="HAL_Button" id="hal_button5">
+            <property name="label" translatable="yes">Move to rel zeropoint</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="related_action">hal_action_mdi5</property>
+          </object>
+          <packing>
+            <property name="position">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="HAL_Button" id="hal_button6">
+            <property name="label" translatable="yes">Move to abs zeropoint</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="related_action">hal_action_mdi6</property>
+          </object>
+          <packing>
+            <property name="position">6</property>
+          </packing>
+        </child>
+        <child>
+          <object class="HAL_Button" id="hal_button7">
+            <property name="label" translatable="yes">Clear message</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="related_action">hal_action_mdi7</property>
+          </object>
+          <packing>
+            <property name="position">7</property>
           </packing>
         </child>
       </object>
@@ -76,6 +103,21 @@
     <property name="step_increment">1</property>
   </object>
   <object class="EMC_Action_MDI" id="hal_action_mdi1">
-    <property name="command">O&lt;change_g54_ofset&gt; call [${spin-f}] [${check}] [${toggle}] [${scale}]</property>
+    <property name="command">O&lt;sys.matheight_abs&gt; call</property>
+  </object>
+  <object class="EMC_Action_MDI" id="hal_action_mdi2">
+    <property name="command">G10 P1 L20 X0</property>
+  </object>
+  <object class="EMC_Action_MDI" id="hal_action_mdi3">
+    <property name="command">G10 P1 L20 Y0</property>
+  </object>
+  <object class="EMC_Action_MDI" id="hal_action_mdi4">
+    <property name="command">G10 P1 L20 Z0</property>
+  </object>
+  <object class="EMC_Action_MDI" id="hal_action_mdi5">
+    <property name="command">O&lt;ui.move_to_rel_zeropoint&gt; call</property>
+  </object>
+  <object class="EMC_Action_MDI" id="hal_action_mdi6">
+    <property name="command">O&lt;ui.move_to_abs_zeropoint&gt; call</property>
   </object>
 </interface>
