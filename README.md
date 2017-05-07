@@ -23,7 +23,7 @@ git clone git@github.com:torvn77/LinuxCNC_SUDA-ST7080.git Git/test <br>
 cd Git/test <br>
 echo gggg >test.txt <br>
 git add . 
-git commit -m "test commit" <br>
+git commit -a -m "test commit" <br>
 git push <br>
 exit <br>
 
