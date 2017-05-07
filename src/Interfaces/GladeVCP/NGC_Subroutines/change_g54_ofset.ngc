@@ -1,6 +1,0 @@
-O<change_g54_ofset> sub
-(PRINT,Calling <pyvcp.change_g54_ofset> function)
-(PRINT, ggg [#1] [#2] [#3] [#4])
-(DEBUG, ggg [#1] [#2] [#3] [#4])
-O<change_g54_ofset> endsub
-M02

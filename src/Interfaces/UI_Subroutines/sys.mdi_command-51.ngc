@@ -1,5 +1,0 @@
-O<sys.mdi_command-51> sub
-(PRINT, call <sys.mdi_command-51>)
-G10 L20 P1 Y0
-O<sys.mdi_command-51> endsub
-M02

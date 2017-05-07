@@ -1,4 +1,0 @@
-O<sys.mdi_command-06> sub
-(PRINT, call <sys.mdi_command-06>)
-O<sys.mdi_command-06> endsub
-M02
