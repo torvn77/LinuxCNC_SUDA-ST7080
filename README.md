@@ -1,6 +1,6 @@
 # The LinuxCNC config for milling machine M4 production Dcs<br>
 Extract sources achives directory ~/linuxcnc/configs <br>
-Copy the file *.desktop from the directory "./Desktop" on your desktop.
+Copy the file *.desktop from the directory "./Desktop" on your desktop. <br>
 
 Установка основной ветки с помощью git:<br>
 git clone git://github.com/torvn77/LinuxCNC_Dcs_M4.git ~/linuxcnc/configs/LinuxCNC_Dcs_M4-master <br>
@@ -22,11 +22,11 @@ ssh-keygen -t rsa -C "torvn77@github.com" <br>
 git clone git@github.com:torvn77/LinuxCNC_SUDA-ST7080.git Git/test <br>
 cd Git/test <br>
 echo gggg >test.txt <br>
-git add . 
+git add .  <br>
 git commit -a -m "test commit" <br>
 git push <br>
 exit <br>
 
 В папке https://github.com/torvn77/LinuxCNC_SUDA-ST7080/tree/master/src/Devices/Primary есть симлинк Select
-для выбора используемого устройства.
-Он не всегда копируется правильно и если linuxcnc не может найти файлы в папке Devices/Primary то вам надо будет его поправить.
+для выбора используемого устройства. <br>
+Он не всегда копируется правильно и если linuxcnc не может найти файлы в папке Devices/Primary то вам надо будет его поправить. <br>
