@@ -5,45 +5,45 @@
 hal loadusr -W hal_input -KA Vendor=11c0 Product=9105
 
 loadrt joyhandle count=4
-addf joyhandle.0 servo-thread
-addf joyhandle.1 servo-thread
-addf joyhandle.2 servo-thread
-addf joyhandle.3 servo-thread
+addf joyhandle.0 logic-thread
+addf joyhandle.1 logic-thread
+addf joyhandle.2 logic-thread
+addf joyhandle.3 logic-thread
 
 loadrt not count=2
-addf not.0 servo-thread
-addf not.1 servo-thread
+addf not.0 logic-thread
+addf not.1 logic-thread
 
 loadrt mux4 count=1
-addf mux4.0 servo-thread
+addf mux4.0 logic-thread
 
 loadrt and2 count=26
-addf and2.0 servo-thread
-addf and2.1 servo-thread
-addf and2.2 servo-thread
-addf and2.3 servo-thread
-addf and2.4 servo-thread
-addf and2.5 servo-thread
-addf and2.6 servo-thread
-addf and2.7 servo-thread
-addf and2.8 servo-thread
-addf and2.9 servo-thread
-addf and2.10 servo-thread
-addf and2.11 servo-thread
-addf and2.12 servo-thread
-addf and2.13 servo-thread
-addf and2.14 servo-thread
-addf and2.15 servo-thread
-addf and2.16 servo-thread
-addf and2.17 servo-thread
-addf and2.18 servo-thread
-addf and2.19 servo-thread
-addf and2.20 servo-thread
-addf and2.21 servo-thread
-addf and2.22 servo-thread
-addf and2.23 servo-thread
-addf and2.24 servo-thread
-addf and2.25 servo-thread
+addf and2.0 logic-thread
+addf and2.1 logic-thread
+addf and2.2 logic-thread
+addf and2.3 logic-thread
+addf and2.4 logic-thread
+addf and2.5 logic-thread
+addf and2.6 logic-thread
+addf and2.7 logic-thread
+addf and2.8 logic-thread
+addf and2.9 logic-thread
+addf and2.10 logic-thread
+addf and2.11 logic-thread
+addf and2.12 logic-thread
+addf and2.13 logic-thread
+addf and2.14 logic-thread
+addf and2.15 logic-thread
+addf and2.16 logic-thread
+addf and2.17 logic-thread
+addf and2.18 logic-thread
+addf and2.19 logic-thread
+addf and2.20 logic-thread
+addf and2.21 logic-thread
+addf and2.22 logic-thread
+addf and2.23 logic-thread
+addf and2.24 logic-thread
+addf and2.25 logic-thread
 
 #---------------------------
 net gamepad.analog_jog-enable   => mux4.0.sel0

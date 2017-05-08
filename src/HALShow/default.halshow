@@ -1,1 +1,1 @@
-pin+motion.probe-input pin+motion.current-vel pin+motion.program-line pin+motion.spindle-speed-in pin+motion.spindle-speed-out
+pin+motion.probe-input pin+motion.current-vel pin+motion.program-line pin+motion.spindle-speed-in pin+motion.spindle-speed-out pin+hm2_5i25.0.write_gpio pin+hm2_5i25.0 pin+hm2_5i25.0.7i76.0.0.input-11 pin+hm2_5i25.0.7i76.0.0.input-12 pin+hm2_5i25.0.7i76.0.0.input-04 pin+hm2_5i25.0.7i76.0.0.input-05 pin+hm2_5i25.0.7i76.0.0.output-15 pin+hm2_5i25.0.7i76.0.0.output-14
