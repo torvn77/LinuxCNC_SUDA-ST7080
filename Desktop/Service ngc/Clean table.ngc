@@ -1,0 +1,29 @@
+#<x_min> = 11
+#<x_max> = 680
+#<y_min> = 0
+#<y_max> = 800
+#<step_y> = 1
+#<safe_z> = 1
+F1200 S14250
+
+G10 P0 L2 X0Y0Z-68.352
+G53 G0 Z0
+G0 X#<x_max>Y#<y_min>
+M03 
+G04 P10
+#<y>=#<_y>
+O100 do
+G0 Z#<safe_z>
+G0 X#<x_max> Y#<y>
+G1 Z0
+G1 X#<x_min>
+#<y>=[#<y>+#<step_y>]
+O100  while [ #<y> LE #<y_max> ]
+
+G0 Z#<safe_z>
+G0 X#<x_max> Y#<y_max>
+G1 Z0
+G1 X#<x_min>
+
+G53 G0 Z0
+M02

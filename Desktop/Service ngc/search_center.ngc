@@ -1,0 +1,76 @@
+(O<search_center> sub)
+
+G54 G21 M05
+#<diametr>=100
+F360
+G91
+G38.2 X[0-#<diametr>]
+#<result_left> = #5061
+G38.4 X+1
+
+G38.2 X[0+#<diametr>]
+#<result_right> = #5061
+G38.4 X-1
+
+#<first_center_x> = [[#<result_left>+#<result_right>]/2]
+G90
+G01 X#<first_center_x>
+
+
+G91
+G38.2 Y[0-#<diametr>]
+#<result_bottom> = #5061
+G38.4 Y+1
+
+G38.2 Y[0+#<diametr>]
+#<result_top> = #5061
+G38.4 Y-1
+
+#<first_center_y> = [[#<result_bottom>+#<result_top>]/2]
+G90
+G01 Y#<first_center_y>
+
+
+
+F120
+G91
+
+(MSG,Left)
+M1
+G38.2 X[0-#<diametr>]
+#<result_left> = #5061
+G38.4 X+1
+
+(MSG,Right)
+M1
+G38.2 X[0+#<diametr>]
+#<result_right> = #5061
+G38.4 X-1
+
+G90
+
+#<first_center_x> = [[#<result_left>+#<result_right>]/2]
+G01 X#<first_center_x>
+
+G91
+
+(MSG,Bottom)
+M1
+G38.2 Y[0-#<diametr>]
+#<result_bottom> = #5061
+G38.4 Y+1
+
+(MSG,Top)
+M1
+G38.2 Y[0+#<diametr>]
+#<result_top> = #5061
+G38.4 Y-1
+
+G90
+
+#<first_center_y> = [[#<result_bottom>+#<result_top>]/2]
+G01 X#<first_center_x> Y#<first_center_y>
+
+G10 L20 P0 X0Y0Z-10
+(O<search_center> endsub)
+M02
