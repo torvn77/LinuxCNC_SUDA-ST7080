@@ -1,36 +1,80 @@
+
+#<_safe_height> = 4
+
+O<drill> sub
+
 #<back_height> = #<_z>
-#<safe_height> = 1
+#<safe_height> = #<_safe_height>
 #<f_drill> = 120
 #<s_drill> = 6000
 #<f_down> = 400
 #<z_drill_start> = 0
-#<z_drill_step> = 10 
-#<z_drill_intent> = -63
+#<z_drill_step> = 5 
+#<z_drill_intent> = -25
 #<cleaning_height> = 0
 #<cleaning_pause> = 1
 
-()
-O<if_01> if [[ #<_rpm> NE #<s_drill> ] OR [ #<_spindle_on> NE 1 ]]; then
+O<if_01> if [[ #<_rpm> LT #<s_drill> ] OR [ #<_spindle_on> NE 1 ]]; then
 M03 S#<s_drill>
 G04 P8
+O<if_01> elseif [[ #<_rpm> GT #<s_drill> ] AND [ #<_spindle_on> EQ 1 ]]
+M03 S#<s_drill>
+G04 P3
+O<if_01> elseif [[ #<_rpm> EQ #<s_drill> ] AND [ #<_spindle_on> EQ 1 ]]
+(Do nothing)
+M03 S#<s_drill>
+O<if_01> else
+(MSG, drill.ngc string 33 ERROR)
+M02
 O<if_01> endif
 
 F0 G64
-O<if_02> if [ #<_z> GT #<safe_height> ]; then 
-G0 Z#<safe_height>
+O<if_02> if [ #<_z> GT [#<z_drill_start> + 1] ]; then 
+G0 Z[#<z_drill_start> + 1]
 O<if_02> endif
 
 #<next_z> = [#<z_drill_start> - #<z_drill_step>]
-O<while_01> while [[ #<next_z> LT #<z_drill_intent> ] AND [  #<_z> LT #<z_drill_intent>  ]]
+O<while_01> while [[ #<next_z> GT #<z_drill_intent> ] AND [  #<_z> GT #<z_drill_intent>  ]]
 F#<f_drill>
 G01 Z#<next_z>
+
 G00 Z#<cleaning_height>
 G04 P#<cleaning_pause>
+
+O<while_01_if_01> if [ #<_z> GT [#<z_drill_start>] ]; then 
+G0 Z[#<z_drill_start>]
+O<while_01_if_01> endif
+
 F#<f_down>
-G01 Z#<next_z>
-#<next_z> = #<z_drill_start> - #<z_drill_step>
+G01 Z [#<z_drill_start> - #<z_drill_step>+1]
+
+O<while_01_if_03> if [ #<_z> GT #<next_z> +1 ]; then 
+G00 Z[#<next_z>+1]
+O<while_01_if_03> endif
+
+#<next_z> = [#<next_z> - #<z_drill_step>]
 O<while_01> endwhile
+
 F#<f_drill>
 G01 Z#<z_drill_intent>
 G00 Z#<back_height>
+
+O<drill> endsub
+
+G53 G0 Z0
+G0 X0.0      Y62.15
+O<drill> call  
+G0 Z#<_safe_height>
+
+
+G0 X53.8235  Y-31.0750
+O<drill> call 
+
+
+G0 X-53.8235 Y-31.0750
+O<drill> call
+
+G53 G0 Z0
+G0 X0Y0
+
 M02
