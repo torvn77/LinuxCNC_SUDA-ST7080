@@ -61,17 +61,18 @@ G00 Z#<back_height>
 
 O<drill> endsub
 
+(62.15)
 G53 G0 Z0
-G0 X0.0      Y62.15
+G0 X+0.0     Y31.05
 O<drill> call  
 G0 Z#<_safe_height>
 
 
-G0 X53.8235  Y-31.0750
+G0 X+26.8901 Y-15.525
 O<drill> call 
 
 
-G0 X-53.8235 Y-31.0750
+G0 X-26.8901 Y-15.525
 O<drill> call
 
 G53 G0 Z0
